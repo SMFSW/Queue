@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For Queue
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Queue	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init	KEYWORD2
+clean	KEYWORD2
+isEmpty	KEYWORD2
+isFull	KEYWORD2
+nbRecs	KEYWORD2
+push	KEYWORD2
+pull	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+FIFO	LITERAL1
+LIFO	LITERAL1

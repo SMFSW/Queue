@@ -1,0 +1,14 @@
+Queue handling library (designed on Arduino)
+2017 SMFSW
+
+Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
+	- issues encountered
+	- optimisations
+	- improvements & new functionalities
+
+------------
+
+** Actual:
+
+v1.0	22 March 2017:
+- First release

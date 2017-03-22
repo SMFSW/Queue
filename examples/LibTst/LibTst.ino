@@ -1,0 +1,71 @@
+/*
+  Lib Test
+  
+  LIFO / FIFO implementations can be tested by changing IMPLEMENTATION
+
+  This example code is in the public domain.
+
+  created 22 March 2017
+  by SMFSW
+ */
+
+#include <Queue.h>
+
+#define	IMPLEMENTATION	FIFO
+#define OVERWRITE		true
+
+#define NB_PUSH			12
+#define NB_PULL			11
+
+
+typedef struct strRec {
+	uint16_t	entry1;
+	uint16_t	entry2;
+} Rec;
+
+Rec tab[6] = {
+	{ 0x1234, 0x3456 },
+	{ 0x5678, 0x7890 },
+	{ 0x90AB, 0xABCD },
+	{ 0xCDEF, 0xEFDC },
+	{ 0xDCBA, 0xBA09 },
+	{ 0x0987, 0x8765 }
+};
+
+Queue	q(sizeof(Rec), 10, IMPLEMENTATION, OVERWRITE);	// Instanciate queue
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+	Serial.begin(115200);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+	int i;
+	
+	for (i = 0 ; i < NB_PUSH ; i++)
+	{
+		Rec rec = tab[i % (sizeof(tab)/sizeof(Rec))];
+		q.push(&rec);
+	}
+	
+	Serial.print("Full?: ");
+	Serial.print(q.isFull());
+	Serial.print("  Nb left: ");
+	Serial.println(q.nbRecs());
+	for (i = 0 ; i < NB_PULL ; i++)
+	{
+		Rec rec = {0xffff,0xffff};
+		Serial.print(q.pull(&rec));
+		Serial.print(" ");
+		Serial.print(rec.entry1, HEX);
+		Serial.print(" ");
+		Serial.println(rec.entry2, HEX);
+	}
+	Serial.print("Empty?: ");
+	Serial.print(q.isEmpty());
+	Serial.print("  Nb left: ");
+	Serial.println(q.nbRecs());
+	
+	while(1);
+}
