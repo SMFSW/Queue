@@ -16,7 +16,9 @@ isEmpty	KEYWORD2
 isFull	KEYWORD2
 nbRecs	KEYWORD2
 push	KEYWORD2
-pull	KEYWORD2
+pop	KEYWORD2
+peek	KEYWORD2
+drop	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

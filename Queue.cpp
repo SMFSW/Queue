@@ -1,7 +1,7 @@
 /*!\file Queue.cpp
 ** \author SMFSW
-** \version 1.0
-** \date 2017/03/22
+** \version 1.1
+** \date 2017/07/06
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -68,7 +68,7 @@ bool Queue::push(void * record)
 	return true;
 }
 
-bool Queue::pull(void * record)
+bool Queue::pop(void * record)
 {
 	uint8_t * pStart;
 	
@@ -87,6 +87,43 @@ bool Queue::pull(void * record)
 	else	{ return false; }
 	
 	memcpy(record, pStart, rec_sz);
+	cnt--;	// Decrease records count
+	return true;
+}
+
+
+bool Queue::peek(void * record)
+{
+	uint8_t *	pStart;
+	
+	if (isEmpty())	{ return false; }	// No more records
+	
+	if (impl == FIFO)
+	{
+		pStart = queue + (rec_sz * out);
+		// No change on out var as it's just a peek
+	}
+	else if (impl == LIFO)
+	{
+		uint8_t rec = in;	// Temporary var for peek (no change on var with DEC_IDX)
+		DEC_IDX(rec, rec_nb, 0);
+		pStart = queue + (rec_sz * rec);
+	}
+	else	{ return false; }
+	
+	memcpy(record, pStart, rec_sz);
+	return true;
+}
+
+
+bool Queue::drop(void)
+{
+	if (isEmpty())			{ return false; }	// No more records
+	
+	if (impl == FIFO)		{ INC_IDX(out, rec_nb, 0); }
+	else if (impl == LIFO)	{ DEC_IDX(in, rec_nb, 0); }
+	else					{ return false; }
+	
 	cnt--;	// Decrease records count
 	return true;
 }

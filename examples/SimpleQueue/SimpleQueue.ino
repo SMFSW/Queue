@@ -7,6 +7,7 @@
   This example code is in the public domain.
 
   created 22 March 2017
+  modified 06 July 2017
   by SMFSW
  */
 
@@ -39,7 +40,7 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-	int i;
+	unsigned int i;
 	
 	for (i = 0 ; i < sizeof(tab)/sizeof(Rec) ; i++)
 	{
@@ -50,7 +51,7 @@ void loop() {
 	for (i = 0 ; i < sizeof(tab)/sizeof(Rec) ; i++)
 	{
 		Rec rec;
-		q.pull(&rec);
+		q.pop(&rec);
 		Serial.print(rec.entry1, HEX);
 		Serial.print(" ");
 		Serial.println(rec.entry2, HEX);

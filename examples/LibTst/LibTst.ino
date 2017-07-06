@@ -6,6 +6,7 @@
   This example code is in the public domain.
 
   created 22 March 2017
+  modified 06 July 2017
   by SMFSW
  */
 
@@ -41,7 +42,7 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-	int i;
+	unsigned int i;
 	
 	for (i = 0 ; i < NB_PUSH ; i++)
 	{
@@ -53,10 +54,11 @@ void loop() {
 	Serial.print(q.isFull());
 	Serial.print("  Nb left: ");
 	Serial.println(q.nbRecs());
-	for (i = 0 ; i < NB_PULL ; i++)
+	for (i = 0 ; i < NB_PULL+1 ; i++)
 	{
 		Rec rec = {0xffff,0xffff};
-		Serial.print(q.pull(&rec));
+		if (i != NB_PULL / 2)	Serial.print(q.pop(&rec));
+		else					Serial.print(q.peek(&rec));
 		Serial.print(" ");
 		Serial.print(rec.entry1, HEX);
 		Serial.print(" ");
