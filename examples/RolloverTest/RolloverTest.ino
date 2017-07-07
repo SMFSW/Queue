@@ -15,7 +15,7 @@
 
 uint16_t in = 0;
 
-Queue	q(sizeof(in), 10, FIFO);	// Instanciate queue
+Queue	q(sizeof(in), 10, FIFO);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {

@@ -31,7 +31,7 @@ Rec tab[6] = {
 };
 
 
-Queue	q(sizeof(Rec), 10, IMPLEMENTATION);	// Instanciate queue
+Queue	q(sizeof(Rec), 10, IMPLEMENTATION);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {

@@ -1,7 +1,7 @@
 /*!\file Queue.cpp
 ** \author SMFSW
-** \version 1.1
-** \date 2017/07/06
+** \version 1.2
+** \date 2017/07/07
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)

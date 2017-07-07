@@ -1,7 +1,7 @@
 /*!\file Queue.h
 ** \author SMFSW
-** \version 1.1
-** \date 2017/07/06
+** \version 1.2
+** \date 2017/07/07
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -88,15 +88,26 @@ public:
 	bool push(void * record);
 
 	/*!	\brief Pop record from queue
-	**	\param [in,out] record - pointer to record to be pulled from queue
+	**	\param [in,out] record - pointer to record to be popped from queue
 	**	\return Pop status
 	**	\retval true if succefully popped from queue
 	**	\retval false if queue is empty
 	**/
 	bool pop(void * record);
 
-	/*!	\brief Peek record from queue
+	/*!	\brief Pull record from queue (same as pop)
+	**	\note added pull inline for compatibility with older versions
 	**	\param [in,out] record - pointer to record to be pulled from queue
+	**	\return Pull status
+	**	\retval true if succefully pulled from queue
+	**	\retval false if queue is empty
+	**/
+	bool pull(void * record)__attribute__((always_inline)) {
+		return pop(record);
+	}
+	
+	/*!	\brief Peek record from queue
+	**	\param [in,out] record - pointer to record to be peeked from queue
 	**	\return Peek status
 	**	\retval true if succefully peeked from queue
 	**	\retval false if queue is empty

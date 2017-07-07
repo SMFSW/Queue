@@ -33,7 +33,7 @@ Rec tab[6] = {
 	{ 0x0987, 0x8765 }
 };
 
-Queue	q(sizeof(Rec), 10, IMPLEMENTATION, OVERWRITE);	// Instanciate queue
+Queue	q(sizeof(Rec), 10, IMPLEMENTATION, OVERWRITE);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {

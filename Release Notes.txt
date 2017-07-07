@@ -10,6 +10,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+v1.2	07 July 2017:
+- added pull inline for compatibility with older versions (v1.0)
+
 v1.1	06 July 2017:
 - pop keyword used (instead of pull)
 - peek & drop functions added
