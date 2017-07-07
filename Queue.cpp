@@ -9,8 +9,11 @@
 **/
 
 
-#include <string.h>
-#include <stdlib.h>
+extern "C"
+{
+	#include <string.h>
+	#include <stdlib.h>
+}
 
 #include "Queue.h"
 
