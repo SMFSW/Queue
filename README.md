@@ -5,6 +5,7 @@ This library was designed for Arduino, yet may be compiled without change with g
 
 ## Usage
 
+- Include library with _#include <cppQueue.h>_
 - Declare a Queue instance _(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)_ (called _q_ below):
   - size_rec - size of a record in the queue
   - nb_recs - number of records in the queue

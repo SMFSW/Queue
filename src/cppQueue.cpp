@@ -1,7 +1,7 @@
-/*!\file Queue.cpp
+/*!\file cppQueue.cpp
 ** \author SMFSW
-** \version 1.2
-** \date 2017/07/07
+** \version 1.3
+** \date 2017/07/12
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -15,7 +15,7 @@ extern "C"
 	#include <stdlib.h>
 }
 
-#include "Queue.h"
+#include "cppQueue.h"
 
 
 #define INC_IDX(ctr, end, start)	if (ctr < (end-1))	{ ctr++; }		\

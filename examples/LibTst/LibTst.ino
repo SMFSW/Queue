@@ -6,11 +6,11 @@
   This example code is in the public domain.
 
   created 22 March 2017
-  modified 06 July 2017
+  modified 12 July 2017
   by SMFSW
  */
 
-#include <Queue.h>
+#include <cppQueue.h>
 
 #define	IMPLEMENTATION	FIFO
 #define OVERWRITE		true

@@ -1,15 +1,15 @@
-/*!\file Queue.h
+/*!\file cppQueue.h
 ** \author SMFSW
-** \version 1.2
-** \date 2017/07/07
+** \version 1.3
+** \date 2017/07/12
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets
 **/
 
-#ifndef __QUEUE_H__
-#define __QUEUE_H__
+#ifndef __CPPQUEUE_H__
+#define __CPPQUEUE_H__
 
 #include <inttypes.h>
 
@@ -122,4 +122,4 @@ public:
 	bool drop(void);
 };
 
-#endif /* __QUEUE_H__ */
+#endif /* __CPPQUEUE_H__ */
