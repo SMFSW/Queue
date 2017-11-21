@@ -1,7 +1,7 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \version 1.3
-** \date 2017/07/12
+** \version 1.4
+** \date 2017/11/21
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -20,7 +20,7 @@ typedef enum enumQueueType {
 } QueueType;
 
 
-/*!	\class Queue Queue.h "Queue/Queue.h"
+/*!	\class Queue cppQueue.h
 **	\brief Class containing the required methods for handling the queue
 **/
 class Queue
@@ -44,7 +44,7 @@ public:
 	**	\param [in] overwrite - Overwrite previous records when queue is full
 	**	\return nothing
 	**/
-	Queue(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, bool overwrite=false);
+	Queue(const uint16_t size_rec, const uint16_t nb_recs=20, const QueueType type=FIFO, const bool overwrite=false);
 	
 	/*!	\brief Queue desructor: release dynamically allocated queue
 	**/
@@ -59,7 +59,7 @@ public:
 	**	\retval true if queue is empty
 	**	\retval false is not empty
 	**/
-	bool isEmpty(void) __attribute__((always_inline)) {
+	inline bool isEmpty(void) __attribute__((always_inline)) {
 		return (!cnt) ? true : false;
 	}
 	
@@ -68,14 +68,14 @@ public:
 	**	\retval true if queue is full
 	**	\retval false is not full
 	**/
-	bool isFull(void) __attribute__((always_inline)) {
+	inline bool isFull(void) __attribute__((always_inline)) {
 		return (cnt == rec_nb) ? true : false;
 	}
 	
 	/*!	\brief get number of records in the queue
 	**	\return Number of records left in the queue
 	**/
-	uint16_t nbRecs(void) __attribute__((always_inline)) {
+	inline uint16_t nbRecs(void) __attribute__((always_inline)) {
 		return cnt;
 	}
 	
@@ -85,7 +85,7 @@ public:
 	**	\retval true if succefully pushed into queue
 	**	\retval false if queue is full
 	**/
-	bool push(void * record);
+	bool push(const void * record);
 
 	/*!	\brief Pop record from queue
 	**	\param [in,out] record - pointer to record to be popped from queue
@@ -102,7 +102,7 @@ public:
 	**	\retval true if succefully pulled from queue
 	**	\retval false if queue is empty
 	**/
-	bool pull(void * record)__attribute__((always_inline)) {
+	inline bool pull(void * record)__attribute__((always_inline)) {
 		return pop(record);
 	}
 	

@@ -1,7 +1,7 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \version 1.3
-** \date 2017/07/12
+** \version 1.4
+** \date 2017/11/21
 ** \copyright BSD 3-Clause License (c) 2017, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -25,7 +25,7 @@ extern "C"
 									else				{ ctr = end-1; }	//!< Decrements buffer index \b cnt rolling back to \b end when limit \b start is reached
 
 
-Queue::Queue(uint16_t size_rec, uint16_t nb_recs, QueueType type, bool overwrite)
+Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
 {
 	rec_nb = nb_recs;
 	rec_sz = size_rec;
@@ -52,7 +52,7 @@ void Queue::clean(void)
 }
 
 
-bool Queue::push(void * record)
+bool Queue::push(const void * record)
 {
 	if ((!ovw) && isFull())	{ return false; }
 	

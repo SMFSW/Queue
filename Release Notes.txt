@@ -10,6 +10,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+v1.4	21 November 2017:
+- Added const qualifier for function parameters
+
 v1.3	12 July 2017:
 - #2 fix for esp8266: reanamed cpp/h files : header name already used in compiler sys includes
 - examples updated with new header file name (cppQueue.h)
