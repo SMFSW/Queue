@@ -1,8 +1,8 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \version 1.4
-** \date 2017/11/21
-** \copyright BSD 3-Clause License (c) 2017, SMFSW
+** \version 1.5
+** \date 2018/03/14
+** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets
@@ -19,10 +19,10 @@ extern "C"
 
 
 #define INC_IDX(ctr, end, start)	if (ctr < (end-1))	{ ctr++; }		\
-									else				{ ctr = start; }	//!< Increments buffer index \b cnt rolling back to \b start when limit \b end is reached
+									else				{ ctr = start; }	//!< Increments buffer index \b ctr rolling back to \b start when limit \b end is reached
 
 #define DEC_IDX(ctr, end, start)	if (ctr > (start))	{ ctr--; }		\
-									else				{ ctr = end-1; }	//!< Decrements buffer index \b cnt rolling back to \b end when limit \b start is reached
+									else				{ ctr = end-1; }	//!< Decrements buffer index \b ctr rolling back to \b end when limit \b start is reached
 
 
 Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
@@ -31,20 +31,25 @@ Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType ty
 	rec_sz = size_rec;
 	impl = type;
 	ovw = overwrite;
-	
+
+	init = 0;
+
 	if (queue)	{ free(queue); }	// Free existing data (if any)
 	queue = (uint8_t *) malloc(nb_recs * size_rec);
 
-	clean();
+	if (queue == NULL)	{ return; }	// Return here if Queue not allocated
+
+	init = QUEUE_INITIALIZED;
+	flush();
 }
 
 Queue::~Queue()
 {
-	free(queue);
+	if (init == QUEUE_INITIALIZED)	free(queue);
 }
 
 
-void Queue::clean(void)
+void Queue::flush(void)
 {
 	in = 0;
 	out = 0;
@@ -62,9 +67,9 @@ bool Queue::push(const void * record)
 	INC_IDX(in, rec_nb, 0);
 	
 	if (!isFull())	{ cnt++; }	// Increase records count
-	else if (ovw)				// Queue is full and ovwite is allowed
+	else if (ovw)				// Queue is full and overwrite is allowed
 	{
-		if (impl == FIFO)			{ INC_IDX(out, rec_nb, 0); }	// as oldest record is overwriten, increment out
+		if (impl == FIFO)			{ INC_IDX(out, rec_nb, 0); }	// as oldest record is overwritten, increment out
 		//else if (impl == LIFO)	{}								// Nothing to do in this case
 	}
 	
@@ -108,7 +113,7 @@ bool Queue::peek(void * record)
 	}
 	else if (impl == LIFO)
 	{
-		uint8_t rec = in;	// Temporary var for peek (no change on var with DEC_IDX)
+		uint16_t rec = in;	// Temporary var for peek (no change on in with DEC_IDX)
 		DEC_IDX(rec, rec_nb, 0);
 		pStart = queue + (rec_sz * rec);
 	}

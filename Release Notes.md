@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017 SMFSW
+2017-2018 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -9,6 +9,12 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+
+v1.5	14 March 2018:
+- Added isInitialized inline to be able to check after init if queue has been properly allocated
+- Added flush inline (to have the same functions as in cQueue library)
+- LIFO peek temporary variable is uint16_t (same type as in variable)
+- Comments fixes
 
 v1.4	21 November 2017:
 - Added const qualifier for function parameters
