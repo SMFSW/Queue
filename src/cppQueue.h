@@ -112,6 +112,8 @@ public:
 	bool push(const void * record);
 
 	/*!	\brief Pop record from queue
+	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
 	**	\param [in,out] record - pointer to record to be popped from queue
 	**	\return Pop status
 	**	\retval true if successfully popped from queue
@@ -120,6 +122,8 @@ public:
 	bool pop(void * record);
 
 	/*!	\brief Pull record from queue (same as pop)
+	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
 	**	\deprecated pull was already used in Queue lib, alias is made to keep compatibility with earlier versions
 	**	\param [in,out] record - pointer to record to be pulled from queue
 	**	\return Pull status
@@ -130,6 +134,8 @@ public:
 		return pop(record); }
 
 	/*!	\brief Peek record from queue
+	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
 	**	\param [in,out] record - pointer to record to be peeked from queue
 	**	\return Peek status
 	**	\retval true if successfully peeked from queue
@@ -138,6 +144,8 @@ public:
 	bool peek(void * record);
 
 	/*!	\brief Drop current record from queue
+	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
 	**	\return drop status
 	**	\retval true if successfully dropped from queue
 	**	\retval false if queue is empty
