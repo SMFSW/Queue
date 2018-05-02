@@ -13,6 +13,7 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 v1.6	2 May 2018:
 - Constructor does not check anymore if class instance is already allocated (as it supposedly isn't)
 - Adding support for unit tests and doxygen documentation generation with Travis CI (using travis-ci-arduino from adafruit before custom bash files needed)
+- Travis bash scripts found in SMFSW travis-ci-arduino forked repository
 
 v1.5	14 March 2018:
 - Added isInitialized inline to be able to check after init if queue has been properly allocated
