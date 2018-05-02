@@ -1,6 +1,6 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \version 1.5
+** \version 1.6
 ** \date 2018/03/14
 ** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)

@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+#Doxygen
+doxygen_sqlite3.db
+doxy

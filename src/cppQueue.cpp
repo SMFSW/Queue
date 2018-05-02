@@ -1,6 +1,6 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \version 1.5
+** \version 1.6
 ** \date 2018/03/14
 ** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)
@@ -34,7 +34,7 @@ Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType ty
 
 	init = 0;
 
-	if (queue)	{ free(queue); }	// Free existing data (if any)
+	//if (queue)	{ free(queue); }	// Free existing data (if any)
 	queue = (uint8_t *) malloc(nb_recs * size_rec);
 
 	if (queue == NULL)	{ return; }	// Return here if Queue not allocated

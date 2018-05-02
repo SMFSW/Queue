@@ -1,4 +1,4 @@
-# Queue
+# Queue [![Build Status](https://travis-ci.org/SMFSW/Queue.svg?branch=master)](https://travis-ci.org/SMFSW/Queue)
 Queue handling library (designed on Arduino)
 
 This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets
