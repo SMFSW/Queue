@@ -44,8 +44,8 @@ See [generated documentation](https://smfsw.github.io/Queue/)
 
 ## Release Notes
 
-See [release notes](./ReleaseNotes.md)
+See [release notes](ReleaseNotes.md)
 
 ## See also
 
-[cQueue](https://github.com/SMFSW/cQueue/) - C implementation of this library
+[cQueue](https://github.com/SMFSW/cQueue) - C implementation of this library
