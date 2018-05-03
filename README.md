@@ -32,9 +32,9 @@ This library was designed for Arduino, yet may be compiled without change with g
 
 ## Examples included
 
-- [SimpleQueue.ino](examples/SimpleQueue/SimpleQueue.ino): Simple queue example (both LIFO FIFO implementations can be tested)
-- [RolloverTest.ino](examples/RolloverTest/RolloverTest.ino): Simple test to test queue rollover (for lib testing purposes mainly)
-- [LibTst.ino](examples/LibTst/LibTst.ino): flexible test (for lib testing purposes mainly)
+- [SimpleQueue.ino](https://github.com/SMFSW/Queue/tree/master/examples/SimpleQueue/SimpleQueue.ino): Simple queue example (both LIFO FIFO implementations can be tested)
+- [RolloverTest.ino](https://github.com/SMFSW/Queue/tree/master/examples/RolloverTest/RolloverTest.ino): Simple test to test queue rollover (for lib testing purposes mainly)
+- [LibTst.ino](https://github.com/SMFSW/Queue/tree/master/examples/LibTst/LibTst.ino): flexible test (for lib testing purposes mainly)
 
 ## Documentation
 
