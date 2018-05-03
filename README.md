@@ -40,12 +40,12 @@ This library was designed for Arduino, yet may be compiled without change with g
 
 Doxygen doc can be generated using "Doxyfile".
 
-See [generated documentation](https://smfsw.github.io/Queue/)
+See [generated documentation](smfsw.github.io/Queue/)
 
 ## Release Notes
 
-See [release notes](https://github.com/SMFSW/Queue/blob/master/ReleaseNotes.md)
+See [release notes](github.com/SMFSW/Queue/blob/master/ReleaseNotes.md)
 
 ## See also
 
-[cQueue](https://github.com/SMFSW/cQueue) - C implementation of this library
+[cQueue](github.com/SMFSW/cQueue) - C implementation of this library
