@@ -11,7 +11,7 @@ env:
      - PRETTYNAME="Queue: Queue handling library (designed on Arduino)"
      - GH_REPO_NAME: Queue
      - GH_REPO_REF: github.com/SMFSW/Queue.git
-#     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
+     - DOXYFILE: github.com/SMFSW/Queue/Doxyfile
 
 before_install:
    - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
