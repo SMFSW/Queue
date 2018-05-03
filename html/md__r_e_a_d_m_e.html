@@ -63,54 +63,58 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Queue handling library (designed on Arduino)</p>
-<p>This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets</p>
+<p>This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets</p>
 <h2>Usage</h2>
 <ul>
-<li>Include library with _::include &lt;cppQueue.h&gt;_</li>
-<li>Declare a Queue instance _(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)_ (called <em>q</em> below):<ul>
-<li>size_rec - size of a record in the queue</li>
-<li>nb_recs - number of records in the queue</li>
-<li>type - Queue implementation type: <em>FIFO</em>, <em>LIFO</em></li>
-<li>overwrite - Overwrite previous records when queue is full if set to <em>true</em></li>
+<li>Declare a Queue instance <code>(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)</code> (called <code>q</code> below):<ul>
+<li><code>size_rec</code> - size of a record in the queue</li>
+<li><code>nb_recs</code> - number of records in the queue</li>
+<li><code>type</code> - Queue implementation type: <em>FIFO</em>, <em>LIFO</em></li>
+<li><code>overwrite</code> - Overwrite previous records when queue is full if set to <em>true</em></li>
 </ul>
 </li>
-<li>Push stuff to the queue using q.push(void * rec)<ul>
-<li>returns <em>true</em> if successfully pushed into queue</li>
-<li>returns <em>false</em> is queue is full</li>
+<li>Push stuff to the queue using <code>q.push(void * rec)</code><ul>
+<li>returns <code>true</code> if successfully pushed into queue</li>
+<li>returns <code>false</code> is queue is full</li>
 </ul>
 </li>
-<li>Pop stuff from the queue using q.pop(void * rec) or q.pull(void * rec)<ul>
-<li>returns <em>true</em> if successfully popped from queue</li>
-<li>returns <em>false</em> if queue is empty</li>
+<li>Pop stuff from the queue using <code>q.pop(void * rec)</code> or <code>q.pull(void * rec)</code><ul>
+<li>returns <code>true</code> if successfully popped from queue</li>
+<li>returns <code>false</code> if queue is empty</li>
 </ul>
 </li>
-<li>Peek stuff from the queue using q.peek(void * rec)<ul>
-<li>returns <em>true</em> if successfully peeked from queue</li>
-<li>returns <em>false</em> if queue is empty</li>
+<li>Peek stuff from the queue using <code>q.peek(void * rec)</code><ul>
+<li>returns <code>true</code> if successfully peeked from queue</li>
+<li>returns <code>false</code> if queue is empty</li>
 </ul>
 </li>
-<li>Drop stuff from the queue using q.Drop(void)<ul>
-<li>returns <em>true</em> if successfully dropped from queue</li>
-<li>returns <em>false</em> if queue is empty</li>
+<li>Drop stuff from the queue using <code>q.Drop(void)</code><ul>
+<li>returns <code>true</code> if successfully dropped from queue</li>
+<li>returns <code>false</code> if queue is empty</li>
 </ul>
 </li>
 <li>Other methods:<ul>
-<li>q.IsInitialized(): <em>true</em> if initialized properly, <em>false</em> otherwise</li>
-<li>q.isEmpty(): <em>true</em> if full, <em>false</em> otherwise</li>
-<li>q.isFull(): <em>true</em> if empty, <em>false</em> otherwise</li>
-<li>q.getCount() or q.nbRecs(): number of records in the queue</li>
-<li>q.clean() or q.flush(): remove all items in the queue</li>
+<li><code>q.IsInitialized()</code>: <code>true</code> if initialized properly, <code>false</code> otherwise</li>
+<li><code>q.isEmpty()</code>: <code>true</code> if full, <code>false</code> otherwise</li>
+<li><code>q.isFull()</code>: <code>true</code> if empty, <code>false</code> otherwise</li>
+<li><code>q.getCount()</code> or <code>q.nbRecs()</code>: number of records in the queue</li>
+<li><code>q.clean()</code> or <code>q.flush()</code>: remove all items in the queue</li>
 </ul>
 </li>
 </ul>
 <h2>Examples included</h2>
 <ul>
-<li>SimpleQueue.ino: Simple queue example (both LIFO FIFO implementations can be tested)</li>
-<li>RolloverTest.ino: Simple test to test queue rollover (for lib testing purposes mainly)</li>
-<li>LibTst.ino: flexible test (for lib testing purposes mainly)</li>
+<li><a href="examples/SimpleQueue/SimpleQueue.ino">SimpleQueue.ino</a>: Simple queue example (both LIFO FIFO implementations can be tested)</li>
+<li><a href="examples/RolloverTest/RolloverTest.ino">RolloverTest.ino</a>: Simple test to test queue rollover (for lib testing purposes mainly)</li>
+<li><a href="examples/LibTst/LibTst.ino">LibTst.ino</a>: flexible test (for lib testing purposes mainly)</li>
 </ul>
 <h2>Documentation</h2>
-<p>Doxygen doc can be generated for the class using "Doxyfile". </p>
+<p>Doxygen doc can be generated using "Doxyfile".</p>
+<p>See <a href="https://smfsw.github.io/Queue/">generated documentation</a></p>
+<h2>Release Notes</h2>
+<p>See [release notes]("https://github.com/SMFSW/Queue/ReleaseNotes.md")</p>
+<h2>See also</h2>
+<p><a href="https://github.com/SMFSW/cQueue">cQueue</a> - C implementation of this library </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
