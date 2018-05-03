@@ -44,7 +44,7 @@ See [generated documentation](https://smfsw.github.io/Queue/)
 
 ## Release Notes
 
-See [release notes](https://github.com/SMFSW/Queue/ReleaseNotes.md)
+See [release notes](https://raw.githubusercontent.com/SMFSW/Queue/ReleaseNotes.md)
 
 ## See also
 
