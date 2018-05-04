@@ -1,6 +1,11 @@
 language: c
 sudo: false
 
+addons:
+    apt:
+        packages:
+            - graphviz
+
 # Blacklist
 branches:
   except:
