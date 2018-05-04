@@ -1,0 +1,4 @@
+<map id="Queue::pop" name="Queue::pop">
+<area shape="rect" id="node2" href="$class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="144,5,240,32"/>
+<area shape="rect" id="node3" href="$class_queue.html#a29b1ce254f3ba5f5f03c5c7c6ef6ccc7" title="Drop current record from queue. " alt="" coords="288,5,381,32"/>
+</map>

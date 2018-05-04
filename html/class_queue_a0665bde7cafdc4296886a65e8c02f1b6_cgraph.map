@@ -1,0 +1,4 @@
+<map id="Queue::Queue" name="Queue::Queue">
+<area shape="rect" id="node2" href="$class_queue.html#a9a0b2853ea0735bb7d74e5e0a1467f0c" title="Flush queue, restarting from empty queue. " alt="" coords="169,5,265,32"/>
+<area shape="rect" id="node3" href="$class_queue.html#a00d119db8fa3050da37746e82cbcf94f" title="Queue destructor: release dynamically allocated queue. " alt="" coords="160,56,275,83"/>
+</map>
