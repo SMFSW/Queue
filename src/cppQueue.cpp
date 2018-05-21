@@ -1,20 +1,19 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \date 2018/03/14
+** \date 2018/05/21
 ** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
-**			This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets
+**			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
-
-
-extern "C"
-{
+/****************************************************************/
+extern "C" {
 	#include <string.h>
 	#include <stdlib.h>
 }
 
 #include "cppQueue.h"
+/****************************************************************/
 
 
 #define INC_IDX(ctr, end, start)	if (ctr < (end-1))	{ ctr++; }		\
@@ -26,6 +25,8 @@ extern "C"
 
 Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
 {
+	uint32_t size = nb_recs * size_rec;
+
 	rec_nb = nb_recs;
 	rec_sz = size_rec;
 	impl = type;
@@ -34,9 +35,10 @@ Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType ty
 	init = 0;
 
 	//if (queue)	{ free(queue); }	// Free existing data (if any)
-	queue = (uint8_t *) malloc(nb_recs * size_rec);
+	queue = (uint8_t *) malloc(size);
 
-	if (queue == NULL)	{ return; }	// Return here if Queue not allocated
+	if (queue == NULL)	{ queue_sz = 0; return; }	// Return here if Queue not allocated
+	else				{ queue_sz = size; }
 
 	init = QUEUE_INITIALIZED;
 	flush();

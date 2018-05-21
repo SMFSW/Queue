@@ -1,16 +1,17 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \date 2018/03/14
+** \date 2018/05/21
 ** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
-**			This library was designed for Arduino, yet may be compiled without change with gcc for other purporses/targets
+**			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
-
-#ifndef __CPPQUEUE_H__
-#define __CPPQUEUE_H__
+/****************************************************************/
+#ifndef __CPPQUEUE_H
+	#define __CPPQUEUE_H
 
 #include <inttypes.h>
+/****************************************************************/
 
 
 #define QUEUE_INITIALIZED	0x5AA5		//!< Queue initialized control value
@@ -35,6 +36,7 @@ private:
 	bool		ovw;		//!< Overwrite previous records when queue is full allowed
 	uint16_t	rec_nb;		//!< number of records in the queue
 	uint16_t	rec_sz;		//!< Size of a record
+	uint32_t	queue_sz;	//!< Size of the full queue
 	uint8_t *	queue;		//!< Queue start pointer (when allocated)
 	
 	uint16_t	in;			//!< number of records pushed into the queue
@@ -88,6 +90,13 @@ public:
 	**/
 	inline bool isFull(void) __attribute__((always_inline)) {
 		return (cnt == rec_nb) ? true : false; }
+
+	/*!	\brief get size of queue
+	**	\remark Size in bytes (like sizeof)
+	**	\return Size of queue in bytes
+	**/
+	inline uint32_t sizeOf(void) __attribute__((always_inline)) {
+		return queue_sz; }
 
 	/*!	\brief get number of records in the queue
 	**	\return Number of records left in the queue
@@ -152,4 +161,4 @@ public:
 	bool drop(void);
 };
 
-#endif /* __CPPQUEUE_H__ */
+#endif /* __CPPQUEUE_H */

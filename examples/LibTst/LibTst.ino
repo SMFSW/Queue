@@ -6,7 +6,7 @@
   This example code is in the public domain.
 
   created 22 March 2017
-  modified 22 March 2018
+  modified 21 May 2018
   by SMFSW
  */
 
@@ -38,6 +38,10 @@ Queue	q(sizeof(Rec), 10, IMPLEMENTATION, OVERWRITE);	// Instantiate queue
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(115200);
+
+	Serial.print("Queue is ");
+	Serial.print(q.sizeOf());
+	Serial.println(" bytes long.");
 }
 
 // the loop function runs over and over again forever

@@ -27,6 +27,7 @@ This library was designed for Arduino, yet may be compiled without change with g
   - `q.IsInitialized()`: `true` if initialized properly, `false` otherwise
   - `q.isEmpty()`: `true` if full, `false` otherwise
   - `q.isFull()`: `true` if empty, `false` otherwise
+  - `q.sizeOf()`: queue size in bytes (returns 0 in case queue allocation failed)
   - `q.getCount()` or `q.nbRecs()`: number of records in the queue
   - `q.clean()` or `q.flush()`: remove all items in the queue
 

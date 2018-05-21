@@ -3,15 +3,16 @@ Queue handling library (designed on Arduino)
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
-	- optimisations
+	- optimizations
 	- improvements & new functionalities
 
 ------------
 
 ** Actual:
 
-v1.6	3 May 2018:
+v1.6	21 May 2018:
 - Constructor does not check anymore if class instance is already allocated (as it supposedly isn't)
+- Added sizeOf inline to check full queue size in byte (may also be used to check if queue has been allocated properly)
 - Adding support for unit tests and doxygen documentation generation with Travis CI (using travis-ci-arduino from adafruit before custom bash files needed)
 - Travis bash scripts found in SMFSW travis-ci-arduino forked repository
 - Removed Doxygen anchor with version in source headers
@@ -27,7 +28,7 @@ v1.4	21 November 2017:
 - Added const qualifier for function parameters
 
 v1.3	12 July 2017:
-- #2 fix for esp8266: reanamed cpp/h files : header name already used in compiler sys includes
+- #2 fix for esp8266: renamed cpp/h files : header name already used in compiler sys includes
 - examples updated with new header file name (cppQueue.h)
 - comply with Arduino v1.5+ IDE source located in src subfolder
 
