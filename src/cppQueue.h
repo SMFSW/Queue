@@ -1,6 +1,6 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \date 2018/05/21
+** \date 2018/05/26
 ** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
@@ -99,17 +99,23 @@ public:
 		return queue_sz; }
 
 	/*!	\brief get number of records in the queue
-	**	\return Number of records left in the queue
+	**	\return Number of records stored in the queue
 	**/
 	inline uint16_t getCount(void) __attribute__((always_inline)) {
 		return cnt; }
 
 	/*!	\brief get number of records in the queue (same as getCount)
 	**	\deprecated nbRecs was already used in Queue lib, alias is made to keep compatibility with earlier versions
-	**	\return Number of records left in the queue
+	**	\return Number of records stored in the queue
 	**/
 	inline uint16_t nbRecs(void) __attribute__((always_inline)) {
 		return getCount(); }
+
+	/*!	\brief get number of records left in the queue
+	**	\return Number of records left in the queue
+	**/
+	inline uint16_t getRemainingCount(void) __attribute__((always_inline)) {
+		return rec_nb - cnt; }
 
 	/*!	\brief Push record to queue
 	**	\param [in] record - pointer to record to be pushed into queue

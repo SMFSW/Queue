@@ -28,12 +28,14 @@ This library was designed for Arduino, yet may be compiled without change with g
   - `q.isEmpty()`: `true` if full, `false` otherwise
   - `q.isFull()`: `true` if empty, `false` otherwise
   - `q.sizeOf()`: queue size in bytes (returns 0 in case queue allocation failed)
-  - `q.getCount()` or `q.nbRecs()`: number of records in the queue
+  - `q.getCount()` or `q.nbRecs()`: number of records stored in the queue
+  - `q.getRemainingCount()`: number of records left in the queue
   - `q.clean()` or `q.flush()`: remove all items in the queue
 
 ## Examples included
 
 - [SimpleQueue.ino](examples/SimpleQueue/SimpleQueue.ino): Simple queue example (both LIFO FIFO implementations can be tested)
+- [PointersQueue.ino](examples/PointersQueue/PointersQueue.ino): Queue of string pointers for string processing
 - [RolloverTest.ino](examples/RolloverTest/RolloverTest.ino): Simple test to test queue rollover (for lib testing purposes mainly)
 - [LibTst.ino](examples/LibTst/LibTst.ino): flexible test (for lib testing purposes mainly)
 

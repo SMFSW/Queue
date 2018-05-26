@@ -20,6 +20,7 @@ isFull	KEYWORD2
 sizeOf	KEYWORD2
 getCount	KEYWORD2
 nbRecs	KEYWORD2
+getRemainingCount	KEYWORD2
 push	KEYWORD2
 pop	KEYWORD2
 pull	KEYWORD2
