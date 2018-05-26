@@ -1,0 +1,7 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="101,5,197,32"/>
+<area shape="rect" id="node4" href="$class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="250,56,339,83"/>
+<area shape="rect" id="node3" href="$class_queue.html#ac89d81f40709b5552abfa44e5a923e29" title="get fullness state of the queue " alt="" coords="245,5,344,32"/>
+<area shape="rect" id="node5" href="$class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="392,56,488,83"/>
+<area shape="rect" id="node6" href="$class_queue.html#a29b1ce254f3ba5f5f03c5c7c6ef6ccc7" title="Drop current record from queue. " alt="" coords="536,56,629,83"/>
+</map>

@@ -1,6 +1,6 @@
 <map id="Queue::isFull" name="Queue::isFull">
-<area shape="rect" id="node2" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="330,5,377,32"/>
+<area shape="rect" id="node2" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="529,31,575,57"/>
 <area shape="rect" id="node3" href="$class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="152,56,248,83"/>
-<area shape="rect" id="node4" href="$_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="326,56,381,83"/>
-<area shape="rect" id="node5" href="$class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="297,107,410,133"/>
+<area shape="rect" id="node4" href="$_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="361,81,415,108"/>
+<area shape="rect" id="node5" href="$class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="297,132,479,159"/>
 </map>

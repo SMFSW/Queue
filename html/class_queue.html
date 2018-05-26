@@ -105,6 +105,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7cc49f7f967ebd27a4cab081943789d6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6">nbRecs</a> (void) __attribute__((always_inline))</td></tr>
 <tr class="memdesc:a7cc49f7f967ebd27a4cab081943789d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of records in the queue (same as getCount)  <a href="#a7cc49f7f967ebd27a4cab081943789d6">More...</a><br /></td></tr>
 <tr class="separator:a7cc49f7f967ebd27a4cab081943789d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0eec88df854ceb0d4f74a8b927d6521"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521">getRemainingCount</a> (void) __attribute__((always_inline))</td></tr>
+<tr class="memdesc:ae0eec88df854ceb0d4f74a8b927d6521"><td class="mdescLeft">&#160;</td><td class="mdescRight">get number of records left in the queue  <a href="#ae0eec88df854ceb0d4f74a8b927d6521">More...</a><br /></td></tr>
+<tr class="separator:ae0eec88df854ceb0d4f74a8b927d6521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a415958dbf4a259a52bbc30e20af0d4a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7">push</a> (const void *record)</td></tr>
 <tr class="memdesc:a415958dbf4a259a52bbc30e20af0d4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push record to queue.  <a href="#a415958dbf4a259a52bbc30e20af0d4a7">More...</a><br /></td></tr>
 <tr class="separator:a415958dbf4a259a52bbc30e20af0d4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,13 +284,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_a29b1ce254f3ba5f5f03c5c7c6ef6ccc7_icgraph.png" border="0" usemap="#class_queue_a29b1ce254f3ba5f5f03c5c7c6ef6ccc7_icgraph" alt=""/></div>
 <map name="class_queue_a29b1ce254f3ba5f5f03c5c7c6ef6ccc7_icgraph" id="class_queue_a29b1ce254f3ba5f5f03c5c7c6ef6ccc7_icgraph">
-<area shape="rect" id="node2" href="class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="147,81,243,108"/>
-<area shape="rect" id="node8" href="class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="433,157,521,184"/>
-<area shape="rect" id="node3" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="607,5,654,32"/>
-<area shape="rect" id="node4" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="291,56,381,83"/>
-<area shape="rect" id="node5" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="429,56,525,83"/>
-<area shape="rect" id="node7" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="574,107,687,133"/>
-<area shape="rect" id="node6" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="603,56,658,83"/>
+<area shape="rect" id="node2" href="class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="147,100,243,127"/>
+<area shape="rect" id="node8" href="class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="433,176,521,203"/>
+<area shape="rect" id="node3" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="806,24,853,51"/>
+<area shape="rect" id="node4" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="291,75,381,101"/>
+<area shape="rect" id="node5" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="429,75,525,101"/>
+<area shape="rect" id="node7" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="574,151,757,177"/>
+<area shape="rect" id="node6" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="638,100,693,127"/>
 </map>
 </div>
 
@@ -347,7 +350,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>get number of records in the queue </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of records left in the queue </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of records stored in the queue </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -355,6 +358,55 @@ Here is the caller graph for this function:</div>
 <map name="class_queue_a22c1c550f8c72c6b978380b370d241d4_icgraph" id="class_queue_a22c1c550f8c72c6b978380b370d241d4_icgraph">
 <area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="210,5,257,32"/>
 <area shape="rect" id="node3" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="177,56,290,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae0eec88df854ceb0d4f74a8b927d6521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0eec88df854ceb0d4f74a8b927d6521">&#9670;&nbsp;</a></span>getRemainingCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Queue::getRemainingCount </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get number of records left in the queue </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of records left in the queue </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_cgraph.png" border="0" usemap="#class_queue_ae0eec88df854ceb0d4f74a8b927d6521_cgraph" alt=""/></div>
+<map name="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_cgraph" id="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_cgraph">
+<area shape="rect" id="node2" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="237,5,333,32"/>
+<area shape="rect" id="node4" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="386,56,475,83"/>
+<area shape="rect" id="node3" href="class_queue.html#ac89d81f40709b5552abfa44e5a923e29" title="get fullness state of the queue " alt="" coords="381,5,480,32"/>
+<area shape="rect" id="node5" href="class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="528,56,624,83"/>
+<area shape="rect" id="node6" href="class_queue.html#a29b1ce254f3ba5f5f03c5c7c6ef6ccc7" title="Drop current record from queue. " alt="" coords="672,56,765,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_icgraph.png" border="0" usemap="#class_queue_ae0eec88df854ceb0d4f74a8b927d6521_icgraph" alt=""/></div>
+<map name="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_icgraph" id="class_queue_ae0eec88df854ceb0d4f74a8b927d6521_icgraph">
+<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="238,5,285,32"/>
 </map>
 </div>
 
@@ -442,10 +494,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_ac89d81f40709b5552abfa44e5a923e29_icgraph.png" border="0" usemap="#class_queue_ac89d81f40709b5552abfa44e5a923e29_icgraph" alt=""/></div>
 <map name="class_queue_ac89d81f40709b5552abfa44e5a923e29_icgraph" id="class_queue_ac89d81f40709b5552abfa44e5a923e29_icgraph">
-<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="330,5,377,32"/>
+<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="529,31,575,57"/>
 <area shape="rect" id="node3" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="152,56,248,83"/>
-<area shape="rect" id="node4" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="326,56,381,83"/>
-<area shape="rect" id="node5" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="297,107,410,133"/>
+<area shape="rect" id="node4" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="361,81,415,108"/>
+<area shape="rect" id="node5" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="297,132,479,159"/>
 </map>
 </div>
 
@@ -513,18 +565,13 @@ Here is the caller graph for this function:</div>
 
 <p>get number of records in the queue (same as getCount) </p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>nbRecs was already used in <a class="el" href="class_queue.html" title="Class containing the required methods for handling the queue. ">Queue</a> lib, alias is made to keep compatibility with earlier versions </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of records left in the queue </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of records stored in the queue </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_a7cc49f7f967ebd27a4cab081943789d6_cgraph.png" border="0" usemap="#class_queue_a7cc49f7f967ebd27a4cab081943789d6_cgraph" alt=""/></div>
 <map name="class_queue_a7cc49f7f967ebd27a4cab081943789d6_cgraph" id="class_queue_a7cc49f7f967ebd27a4cab081943789d6_cgraph">
 <area shape="rect" id="node2" href="class_queue.html#a22c1c550f8c72c6b978380b370d241d4" title="get number of records in the queue " alt="" coords="169,5,290,32"/>
-<area shape="rect" id="node3" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="181,56,277,83"/>
-<area shape="rect" id="node5" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="343,107,433,133"/>
-<area shape="rect" id="node4" href="class_queue.html#ac89d81f40709b5552abfa44e5a923e29" title="get fullness state of the queue " alt="" coords="339,56,437,83"/>
-<area shape="rect" id="node6" href="class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="485,107,581,133"/>
-<area shape="rect" id="node7" href="class_queue.html#a29b1ce254f3ba5f5f03c5c7c6ef6ccc7" title="Drop current record from queue. " alt="" coords="629,107,723,133"/>
 </map>
 </div>
 
@@ -575,12 +622,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_a5a715cb528a84594bab04cb73afbfc4b_icgraph.png" border="0" usemap="#class_queue_a5a715cb528a84594bab04cb73afbfc4b_icgraph" alt=""/></div>
 <map name="class_queue_a5a715cb528a84594bab04cb73afbfc4b_icgraph" id="class_queue_a5a715cb528a84594bab04cb73afbfc4b_icgraph">
-<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="466,5,513,32"/>
-<area shape="rect" id="node3" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="150,81,239,108"/>
-<area shape="rect" id="node7" href="class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="292,157,380,184"/>
-<area shape="rect" id="node4" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="288,56,384,83"/>
-<area shape="rect" id="node6" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="433,107,546,133"/>
-<area shape="rect" id="node5" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="462,56,517,83"/>
+<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="665,30,711,56"/>
+<area shape="rect" id="node3" href="class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="150,106,239,132"/>
+<area shape="rect" id="node7" href="class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="292,182,380,208"/>
+<area shape="rect" id="node4" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="288,80,384,107"/>
+<area shape="rect" id="node6" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="433,156,615,183"/>
+<area shape="rect" id="node5" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="497,106,551,132"/>
 </map>
 </div>
 
@@ -632,11 +679,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_a0ffe1950f8d1afcc4ec0e0fb3de802da_icgraph.png" border="0" usemap="#class_queue_a0ffe1950f8d1afcc4ec0e0fb3de802da_icgraph" alt=""/></div>
 <map name="class_queue_a0ffe1950f8d1afcc4ec0e0fb3de802da_icgraph" id="class_queue_a0ffe1950f8d1afcc4ec0e0fb3de802da_icgraph">
-<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="322,5,369,32"/>
+<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="521,5,567,32"/>
 <area shape="rect" id="node3" href="class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="144,56,240,83"/>
-<area shape="rect" id="node5" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="289,107,402,133"/>
+<area shape="rect" id="node5" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="289,107,471,133"/>
 <area shape="rect" id="node6" href="class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="148,157,236,184"/>
-<area shape="rect" id="node4" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="318,56,373,83"/>
+<area shape="rect" id="node4" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="353,56,407,83"/>
 </map>
 </div>
 
@@ -743,9 +790,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_queue_a415958dbf4a259a52bbc30e20af0d4a7_icgraph.png" border="0" usemap="#class_queue_a415958dbf4a259a52bbc30e20af0d4a7_icgraph" alt=""/></div>
 <map name="class_queue_a415958dbf4a259a52bbc30e20af0d4a7_icgraph" id="class_queue_a415958dbf4a259a52bbc30e20af0d4a7_icgraph">
-<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="183,5,230,32"/>
-<area shape="rect" id="node3" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="179,56,234,83"/>
-<area shape="rect" id="node4" href="class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="150,107,263,133"/>
+<area shape="rect" id="node2" href="_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="382,27,429,53"/>
+<area shape="rect" id="node3" href="_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="214,27,269,53"/>
+<area shape="rect" id="node4" href="class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="150,77,333,104"/>
 </map>
 </div>
 

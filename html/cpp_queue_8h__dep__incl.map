@@ -1,6 +1,7 @@
 <map id="src/cppQueue.h" name="src/cppQueue.h">
 <area shape="rect" id="node2" href="$_lib_tst_8ino.html" title="examples/LibTst/LibTst.ino" alt="" coords="5,88,184,115"/>
-<area shape="rect" id="node3" href="$_rollover_test_8ino.html" title="examples/RolloverTest\l/RolloverTest.ino" alt="" coords="209,81,364,122"/>
-<area shape="rect" id="node4" href="$_simple_queue_8ino.html" title="examples/SimpleQueue\l/SimpleQueue.ino" alt="" coords="389,81,548,122"/>
-<area shape="rect" id="node5" href="$cpp_queue_8cpp.html" title="Queue handling library (designed on Arduino) " alt="" coords="573,88,701,115"/>
+<area shape="rect" id="node3" href="$_pointers_queue_8ino.html" title="examples/PointersQueue\l/PointersQueue.ino" alt="" coords="208,81,376,122"/>
+<area shape="rect" id="node4" href="$_rollover_test_8ino.html" title="examples/RolloverTest\l/RolloverTest.ino" alt="" coords="401,81,556,122"/>
+<area shape="rect" id="node5" href="$_simple_queue_8ino.html" title="examples/SimpleQueue\l/SimpleQueue.ino" alt="" coords="581,81,740,122"/>
+<area shape="rect" id="node6" href="$cpp_queue_8cpp.html" title="Queue handling library (designed on Arduino) " alt="" coords="765,88,893,115"/>
 </map>

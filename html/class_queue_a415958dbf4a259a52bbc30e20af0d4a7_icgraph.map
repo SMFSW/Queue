@@ -1,5 +1,5 @@
 <map id="Queue::push" name="Queue::push">
-<area shape="rect" id="node2" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="183,5,230,32"/>
-<area shape="rect" id="node3" href="$_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="179,56,234,83"/>
-<area shape="rect" id="node4" href="$class_queue.html#a7cc49f7f967ebd27a4cab081943789d6" title="get number of records in the queue (same as getCount) " alt="" coords="150,107,263,133"/>
+<area shape="rect" id="node2" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="382,27,429,53"/>
+<area shape="rect" id="node3" href="$_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="214,27,269,53"/>
+<area shape="rect" id="node4" href="$class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="150,77,333,104"/>
 </map>
