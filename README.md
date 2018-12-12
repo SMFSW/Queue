@@ -1,4 +1,4 @@
-# Queue [![Build Status](https://travis-ci.org/SMFSW/Queue.svg?branch=master)](https://travis-ci.org/SMFSW/Queue)
+# Queue [![Build Status](https://travis-ci.com/SMFSW/Queue.svg?branch=master)](https://travis-ci.com/SMFSW/Queue)
 
 Queue handling library (designed on Arduino)
 
