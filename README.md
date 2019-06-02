@@ -25,8 +25,8 @@ This library was designed for Arduino, yet may be compiled without change with g
   - returns `false` if queue is empty
 - Other methods:
   - `q.IsInitialized()`: `true` if initialized properly, `false` otherwise
-  - `q.isEmpty()`: `true` if full, `false` otherwise
-  - `q.isFull()`: `true` if empty, `false` otherwise
+  - `q.isEmpty()`: `true` if empty, `false` otherwise
+  - `q.isFull()`: `true` if full, `false` otherwise
   - `q.sizeOf()`: queue size in bytes (returns 0 in case queue allocation failed)
   - `q.getCount()` or `q.nbRecs()`: number of records stored in the queue
   - `q.getRemainingCount()`: number of records left in the queue
