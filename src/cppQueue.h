@@ -1,7 +1,6 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \date 2018/05/26
-** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2019, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
@@ -38,7 +37,7 @@ private:
 	uint16_t	rec_sz;		//!< Size of a record
 	uint32_t	queue_sz;	//!< Size of the full queue
 	uint8_t *	queue;		//!< Queue start pointer (when allocated)
-	
+
 	uint16_t	in;			//!< number of records pushed into the queue
 	uint16_t	out;		//!< number of records pulled from the queue (only for FIFO)
 	uint16_t	cnt;		//!< number of records not retrieved from the queue
@@ -64,7 +63,7 @@ public:
 	/*!	\brief Clean queue, restarting from empty queue
 	**	\deprecated clean was already used in Queue lib, alias is made to keep compatibility with earlier versions
 	**/
-	inline void clean(void)__attribute__((always_inline)) {
+	inline void clean(void) __attribute__((always_inline)) {
 		flush(); }
 
 	/*!	\brief get initialization state of the queue
@@ -123,7 +122,7 @@ public:
 	**	\retval true if successfully pushed into queue
 	**	\retval false if queue is full
 	**/
-	bool push(const void * record);
+	bool push(const void * record) __attribute__((nonnull));
 
 	/*!	\brief Pop record from queue
 	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
@@ -133,7 +132,7 @@ public:
 	**	\retval true if successfully popped from queue
 	**	\retval false if queue is empty
 	**/
-	bool pop(void * record);
+	bool pop(void * record) __attribute__((nonnull));
 
 	/*!	\brief Pull record from queue (same as pop)
 	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
@@ -144,7 +143,7 @@ public:
 	**	\retval true if successfully pulled from queue
 	**	\retval false if queue is empty
 	**/
-	inline bool pull(void * record)__attribute__((always_inline)) {
+	inline bool pull(void * record) __attribute__((nonnull,always_inline)) {
 		return pop(record); }
 
 	/*!	\brief Peek record from queue
@@ -155,7 +154,7 @@ public:
 	**	\retval true if successfully peeked from queue
 	**	\retval false if queue is empty
 	**/
-	bool peek(void * record);
+	bool peek(void * record) __attribute__((nonnull));
 
 	/*!	\brief Drop current record from queue
 	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,

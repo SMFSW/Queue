@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017-2018 SMFSW
+2017-2019 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -9,6 +9,12 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+
+v1.7:	2 Jun 2019:
+- Fixed README.md thanks to @reydelleon
+- INC_IDX & DEC_IDX macros changed to inlines
+- Added nonnull function attribute where needed
+- Updated Doxyfile
 
 v1.6	26 May 2018:
 - Constructor does not check anymore if class instance is already allocated (as it supposedly isn't)

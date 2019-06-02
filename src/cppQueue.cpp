@@ -1,7 +1,6 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \date 2018/05/26
-** \copyright BSD 3-Clause License (c) 2017-2018, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2019, SMFSW
 ** \brief Queue handling library (designed on Arduino)
 ** \details Queue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
@@ -16,11 +15,29 @@ extern "C" {
 /****************************************************************/
 
 
-#define INC_IDX(ctr, end, start)	if (ctr < (end-1))	{ ctr++; }		\
-									else				{ ctr = start; }	//!< Increments buffer index \b ctr rolling back to \b start when limit \b end is reached
+/*!	\brief Increment index
+**	\details Increment buffer index \b pIdx rolling back to \b start when limit \b end is reached
+**	\param [in,out] pIdx - pointer to index value
+**	\param [in] end - counter upper limit value
+**	\param [in] start - counter lower limit value
+**/
+static inline void __attribute__((nonnull, always_inline)) inc_idx(uint16_t * pIdx, const uint16_t end, const uint16_t start)
+{
+	if (*pIdx < end - 1)	{ (*pIdx)++; }
+	else					{ *pIdx = start; }
+}
 
-#define DEC_IDX(ctr, end, start)	if (ctr > (start))	{ ctr--; }		\
-									else				{ ctr = end-1; }	//!< Decrements buffer index \b ctr rolling back to \b end when limit \b start is reached
+/*!	\brief Decrement index
+**	\details Decrement buffer index \b pIdx rolling back to \b end when limit \b start is reached
+**	\param [in,out] pIdx - pointer to index value
+**	\param [in] end - counter upper limit value
+**	\param [in] start - counter lower limit value
+**/
+static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * pIdx, const uint16_t end, const uint16_t start)
+{
+	if (*pIdx > start)		{ (*pIdx)--; }
+	else					{ *pIdx = end - 1; }
+}
 
 
 Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
@@ -58,55 +75,55 @@ void Queue::flush(void)
 }
 
 
-bool Queue::push(const void * record)
+bool __attribute__((nonnull)) Queue::push(const void * record)
 {
 	if ((!ovw) && isFull())	{ return false; }
-	
+
 	uint8_t * pStart = queue + (rec_sz * in);
 	memcpy(pStart, record, rec_sz);
-	
-	INC_IDX(in, rec_nb, 0);
-	
+
+	inc_idx(&in, rec_nb, 0);
+
 	if (!isFull())	{ cnt++; }	// Increase records count
 	else if (ovw)				// Queue is full and overwrite is allowed
 	{
-		if (impl == FIFO)			{ INC_IDX(out, rec_nb, 0); }	// as oldest record is overwritten, increment out
+		if (impl == FIFO)			{ inc_idx(&out, rec_nb, 0); }	// as oldest record is overwritten, increment out
 		//else if (impl == LIFO)	{}								// Nothing to do in this case
 	}
-	
+
 	return true;
 }
 
-bool Queue::pop(void * record)
+bool __attribute__((nonnull)) Queue::pop(void * record)
 {
 	uint8_t * pStart;
-	
+
 	if (isEmpty())	{ return false; }	// No more records
-	
+
 	if (impl == FIFO)
 	{
 		pStart = queue + (rec_sz * out);
-		INC_IDX(out, rec_nb, 0);
+		inc_idx(&out, rec_nb, 0);
 	}
 	else if (impl == LIFO)
 	{
-		DEC_IDX(in, rec_nb, 0);
+		dec_idx(&in, rec_nb, 0);
 		pStart = queue + (rec_sz * in);
 	}
 	else	{ return false; }
-	
+
 	memcpy(record, pStart, rec_sz);
 	cnt--;	// Decrease records count
 	return true;
 }
 
 
-bool Queue::peek(void * record)
+bool __attribute__((nonnull)) Queue::peek(void * record)
 {
 	uint8_t *	pStart;
-	
+
 	if (isEmpty())	{ return false; }	// No more records
-	
+
 	if (impl == FIFO)
 	{
 		pStart = queue + (rec_sz * out);
@@ -114,12 +131,12 @@ bool Queue::peek(void * record)
 	}
 	else if (impl == LIFO)
 	{
-		uint16_t rec = in;	// Temporary var for peek (no change on in with DEC_IDX)
-		DEC_IDX(rec, rec_nb, 0);
+		uint16_t rec = in;	// Temporary var for peek (no change on in with dec_idx)
+		dec_idx(&rec, rec_nb, 0);
 		pStart = queue + (rec_sz * rec);
 	}
 	else	{ return false; }
-	
+
 	memcpy(record, pStart, rec_sz);
 	return true;
 }
@@ -128,11 +145,11 @@ bool Queue::peek(void * record)
 bool Queue::drop(void)
 {
 	if (isEmpty())			{ return false; }	// No more records
-	
-	if (impl == FIFO)		{ INC_IDX(out, rec_nb, 0); }
-	else if (impl == LIFO)	{ DEC_IDX(in, rec_nb, 0); }
+
+	if (impl == FIFO)		{ inc_idx(&out, rec_nb, 0); }
+	else if (impl == LIFO)	{ dec_idx(&in, rec_nb, 0); }
 	else					{ return false; }
-	
+
 	cnt--;	// Decrease records count
 	return true;
 }
