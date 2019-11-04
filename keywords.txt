@@ -26,6 +26,8 @@ pop	KEYWORD2
 pull	KEYWORD2
 peek	KEYWORD2
 drop	KEYWORD2
+peekIdx	KEYWORD2
+peekPrevious	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
