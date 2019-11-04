@@ -122,20 +122,20 @@ public:
 	**	\retval true if successfully pushed into queue
 	**	\retval false if queue is full
 	**/
-	bool push(const void * record) __attribute__((nonnull));
+	bool push(const void * const record) __attribute__((nonnull));
 
 	/*!	\brief Pop record from queue
-	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
 	**				you shall disable interrupts in main application when using these functions
 	**	\param [in,out] record - pointer to record to be popped from queue
 	**	\return Pop status
 	**	\retval true if successfully popped from queue
 	**	\retval false if queue is empty
 	**/
-	bool pop(void * record) __attribute__((nonnull));
+	bool pop(void * const record) __attribute__((nonnull));
 
 	/*!	\brief Pull record from queue (same as pop)
-	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
 	**				you shall disable interrupts in main application when using these functions
 	**	\deprecated pull was already used in Queue lib, alias is made to keep compatibility with earlier versions
 	**	\param [in,out] record - pointer to record to be pulled from queue
@@ -143,27 +143,54 @@ public:
 	**	\retval true if successfully pulled from queue
 	**	\retval false if queue is empty
 	**/
-	inline bool pull(void * record) __attribute__((nonnull,always_inline)) {
+	inline bool pull(void * const record) __attribute__((nonnull,always_inline)) {
 		return pop(record); }
 
 	/*!	\brief Peek record from queue
-	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
 	**				you shall disable interrupts in main application when using these functions
+	**	\note This function is most likely to be used in conjunction with drop
 	**	\param [in,out] record - pointer to record to be peeked from queue
 	**	\return Peek status
 	**	\retval true if successfully peeked from queue
 	**	\retval false if queue is empty
 	**/
-	bool peek(void * record) __attribute__((nonnull));
+	bool peek(void * const record) __attribute__((nonnull));
 
 	/*!	\brief Drop current record from queue
-	**	\warning If using push, pop, peek and/or drop in both interrupts and main application,
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
 	**				you shall disable interrupts in main application when using these functions
+	**	\note This method is most likely to be used in conjunction with peek
 	**	\return drop status
 	**	\retval true if successfully dropped from queue
 	**	\retval false if queue is empty
 	**/
 	bool drop(void);
+
+	/*!	\brief Peek record at index from queue
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
+	**	\note This function is only useful if searching for a duplicate record and shouldn't be used in conjunction with drop
+	**	\param [in,out] record - pointer to record to be peeked from queue
+	**	\param [in] idx - index of the record to pick
+	**	\return Peek status
+	**	\retval true if successfully peeked from queue
+	**	\retval false if index is out of range
+	**/
+	bool peekIdx(void * const record, const uint16_t idx) __attribute__((nonnull));
+
+	/*!	\brief Peek previous record from queue
+	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
+	**				you shall disable interrupts in main application when using these functions
+	**	\note This inline is only useful with FIFO implementation, use peek instead with a LIFO (will lead to the same result)
+	**	\param [in,out] record - pointer to record to be peeked from queue
+	**	\return Peek status
+	**	\retval true if successfully peeked from queue
+	**	\retval false if queue is empty
+	**/
+	inline bool peekPrevious(void * const record) __attribute__((nonnull,always_inline)) {
+		const uint16_t idx = getCount() - 1;	// No worry about count - 1 when queue is empty, test is done by peekIdx
+		return peekIdx(record, idx); }
 };
 
 #endif /* __CPPQUEUE_H */

@@ -21,8 +21,10 @@ extern "C" {
 **	\param [in] end - counter upper limit value
 **	\param [in] start - counter lower limit value
 **/
-static inline void __attribute__((nonnull, always_inline)) inc_idx(uint16_t * pIdx, const uint16_t end, const uint16_t start)
+static inline void __attribute__((nonnull, always_inline)) inc_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
+//	(*pIdx)++;
+//	*pIdx %= end;
 	if (*pIdx < end - 1)	{ (*pIdx)++; }
 	else					{ *pIdx = start; }
 }
@@ -33,7 +35,7 @@ static inline void __attribute__((nonnull, always_inline)) inc_idx(uint16_t * pI
 **	\param [in] end - counter upper limit value
 **	\param [in] start - counter lower limit value
 **/
-static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * pIdx, const uint16_t end, const uint16_t start)
+static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
 	if (*pIdx > start)		{ (*pIdx)--; }
 	else					{ *pIdx = end - 1; }
@@ -42,7 +44,7 @@ static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * pI
 
 Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
 {
-	uint32_t size = nb_recs * size_rec;
+	const uint32_t size = nb_recs * size_rec;
 
 	rec_nb = nb_recs;
 	rec_sz = size_rec;
@@ -75,11 +77,11 @@ void Queue::flush(void)
 }
 
 
-bool __attribute__((nonnull)) Queue::push(const void * record)
+bool __attribute__((nonnull)) Queue::push(const void * const record)
 {
 	if ((!ovw) && isFull())	{ return false; }
 
-	uint8_t * pStart = queue + (rec_sz * in);
+	uint8_t * const pStart = queue + (rec_sz * in);
 	memcpy(pStart, record, rec_sz);
 
 	inc_idx(&in, rec_nb, 0);
@@ -94,9 +96,9 @@ bool __attribute__((nonnull)) Queue::push(const void * record)
 	return true;
 }
 
-bool __attribute__((nonnull)) Queue::pop(void * record)
+bool __attribute__((nonnull)) Queue::pop(void * const record)
 {
-	uint8_t * pStart;
+	const uint8_t * pStart;
 
 	if (isEmpty())	{ return false; }	// No more records
 
@@ -118,9 +120,9 @@ bool __attribute__((nonnull)) Queue::pop(void * record)
 }
 
 
-bool __attribute__((nonnull)) Queue::peek(void * record)
+bool __attribute__((nonnull)) Queue::peek(void * const record)
 {
-	uint8_t *	pStart;
+	const uint8_t *	pStart;
 
 	if (isEmpty())	{ return false; }	// No more records
 
@@ -153,3 +155,25 @@ bool Queue::drop(void)
 	cnt--;	// Decrease records count
 	return true;
 }
+
+
+bool Queue::peekIdx(void * const record, const uint16_t idx)
+{
+	const uint8_t * pStart;
+
+	if (idx + 1 > getCount())	{ return false; }	// Index out of range
+
+	if (impl == FIFO)
+	{
+		pStart = queue + (rec_sz * ((out + idx) % rec_nb));
+	}
+	else if (impl == LIFO)
+	{
+		pStart = queue + (rec_sz * idx);
+	}
+	else	{ return false; }
+
+	memcpy(record, pStart, rec_sz);
+	return true;
+}
+

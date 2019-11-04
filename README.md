@@ -20,9 +20,18 @@ This library was designed for Arduino, yet may be compiled without change with g
 - Peek stuff from the queue using `q.peek(void * rec)`
   - returns `true` if successfully peeked from queue
   - returns `false` if queue is empty
-- Drop stuff from the queue using `q.Drop(void)`
+- Drop stuff from the queue using `q.drop(void)`
   - returns `true` if successfully dropped from queue
   - returns `false` if queue is empty
+- Peek stuff at index from the queue using `q.peekIdx(void * rec, uint16_t idx)`
+  - returns `true` if successfully peeked from queue
+  - returns `false` if index is out of range
+  - warning: no associated drop function, not to use with `q.drop`
+- Peek latest stored from the queue using `q.peekPrevious(void * rec)`
+  - returns `true` if successfully peeked from queue
+  - returns `false` if queue is empty
+  - warning: no associated drop function, not to use with `q.drop`
+  - note: only useful with FIFO implementation, use `q.peek` instead with a LIFO
 - Other methods:
   - `q.IsInitialized()`: `true` if initialized properly, `false` otherwise
   - `q.isEmpty()`: `true` if empty, `false` otherwise
@@ -32,10 +41,19 @@ This library was designed for Arduino, yet may be compiled without change with g
   - `q.getRemainingCount()`: number of records left in the queue
   - `q.clean()` or `q.flush()`: remove all items in the queue
 
+## Notes
+
+- Interrupt safe automation is not implemented in the library. You have to manually disable/enable interrupts where required.
+No implementation will be made as it would be an issue when using `peek`/`drop` methods with LIFO implementation:
+if an item is put to the queue through interrupt between `peek` and `drop` calls, the `drop` call would drop the wrong (newer) item.
+In this particular case, dropping decision must be made before re-enabling interrupts.
+
 ## Examples included
 
 - [SimpleQueue.ino](examples/SimpleQueue/SimpleQueue.ino): Simple queue example (both LIFO FIFO implementations can be tested)
 - [PointersQueue.ino](examples/PointersQueue/PointersQueue.ino): Queue of string pointers for string processing
+- [QueueDuplicates.ino](examples/QueueDuplicates/QueueDuplicates.ino): Simple test to test queue duplicates before pushing to queue
+- [QueueIdxPeeking.ino](examples/QueueIdxPeeking/QueueIdxPeeking.ino): Simple test to test queue index picking
 - [RolloverTest.ino](examples/RolloverTest/RolloverTest.ino): Simple test to test queue rollover (for lib testing purposes mainly)
 - [LibTst.ino](examples/LibTst/LibTst.ino): flexible test (for lib testing purposes mainly)
 

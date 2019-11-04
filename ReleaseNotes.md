@@ -10,6 +10,11 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+v1.8:	4 Nov 2019:
+- const qualifiers added where missing
+- Added peekIdx and peekPrevious methods
+- Added related examples
+
 v1.7:	2 Jun 2019:
 - Fixed README.md thanks to @reydelleon
 - INC_IDX & DEC_IDX macros changed to inlines
