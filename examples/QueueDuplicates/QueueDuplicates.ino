@@ -6,6 +6,7 @@
   This example code is in the public domain.
 
   created 3 November 2019
+  modified 6 November 2019
   by SMFSW
  */
 
@@ -61,7 +62,7 @@ void loop() {
 		if (memcmp(&rec, &chk, sizeof(Rec)))	{ q.push(&rec); }
 #else						// Check the whole queue
 		bool duplicate = false;
-		for (int j = max(0, (int) (q.getCount() - 1)) ; j > 0 ; j--)
+		for (int j = (int) q_getCount(&q) - 1 ; j >= 0 ; j--)
 		{
 			Rec chk = {0xffff,0xffff};
 			q.peekIdx(&chk, j);
