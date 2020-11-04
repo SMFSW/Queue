@@ -9,7 +9,7 @@ For compatibility purposes, `Queue` class has been renamed to `cppQueue`. Sorry 
 
 ## Usage
 
-- Declare a cppQueue instance `(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)` (called `q` below):
+- Declare a `cppQueue` instance `(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)` (called `q` below):
   - `size_rec` - size of a record in the queue
   - `nb_recs` - number of records in the queue
   - `type` - Queue implementation type: _FIFO_, _LIFO_
@@ -36,7 +36,7 @@ For compatibility purposes, `Queue` class has been renamed to `cppQueue`. Sorry 
   - warning: no associated drop function, not to use with `q.drop`
   - note: only useful with FIFO implementation, use `q.peek` instead with a LIFO
 - Other methods:
-  - `q.IsInitialized()`: `true` if initialized properly, `false` otherwise
+  - `q.isInitialized()`: `true` if initialized properly, `false` otherwise
   - `q.isEmpty()`: `true` if empty, `false` otherwise
   - `q.isFull()`: `true` if full, `false` otherwise
   - `q.sizeOf()`: queue size in bytes (returns 0 in case queue allocation failed)
