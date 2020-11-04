@@ -1,8 +1,8 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2019, SMFSW
-** \brief Queue handling library (designed on Arduino)
-** \details Queue handling library (designed on Arduino)
+** \copyright BSD 3-Clause License (c) 2017-2020, SMFSW
+** \brief cppQueue handling library (designed on Arduino)
+** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
 /****************************************************************/
@@ -13,61 +13,61 @@
 /****************************************************************/
 
 
-#define QUEUE_INITIALIZED	0x5AA5		//!< Queue initialized control value
+#define QUEUE_INITIALIZED	0x5AA5		//!< cppQueue initialized control value
 
 
-/*!\enum enumQueueType
-** \brief Queue behavior enumeration (FIFO, LIFO)
+/*!\enum enumcppQueueType
+** \brief cppQueue behavior enumeration (FIFO, LIFO)
 **/
-typedef enum enumQueueType {
+typedef enum enumcppQueueType {
 	FIFO = 0,	//!< First In First Out behavior
 	LIFO = 1	//!< Last In First Out behavior
-} QueueType;
+} cppQueueType;
 
 
-/*!	\class Queue
+/*!	\class cppQueue
 **	\brief Class containing the required methods for handling the queue
 **/
-class Queue
+class cppQueue
 {
 private:
-	QueueType	impl;		//!< Queue implementation: FIFO LIFO
-	bool		ovw;		//!< Overwrite previous records when queue is full allowed
-	uint16_t	rec_nb;		//!< number of records in the queue
-	uint16_t	rec_sz;		//!< Size of a record
-	uint32_t	queue_sz;	//!< Size of the full queue
-	uint8_t *	queue;		//!< Queue start pointer (when allocated)
+	cppQueueType	impl;		//!< cppQueue implementation: FIFO LIFO
+	bool			ovw;		//!< Overwrite previous records when queue is full allowed
+	uint16_t		rec_nb;		//!< number of records in the queue
+	uint16_t		rec_sz;		//!< Size of a record
+	uint32_t		queue_sz;	//!< Size of the full queue
+	uint8_t *		queue;		//!< cppQueue start pointer (when allocated)
 
-	uint16_t	in;			//!< number of records pushed into the queue
-	uint16_t	out;		//!< number of records pulled from the queue (only for FIFO)
-	uint16_t	cnt;		//!< number of records not retrieved from the queue
-	uint16_t	init;		//!< set to QUEUE_INITIALIZED after successful init of the queue, 0 otherwise
+	uint16_t		in;			//!< number of records pushed into the queue
+	uint16_t		out;		//!< number of records pulled from the queue (only for FIFO)
+	uint16_t		cnt;		//!< number of records not retrieved from the queue
+	uint16_t		init;		//!< set to QUEUE_INITIALIZED after successful init of the queue, 0 otherwise
 public:
-	/*!	\brief Queue constructor
+	/*!	\brief cppQueue constructor
 	**	\param [in] size_rec - size of a record in the queue
 	**	\param [in] nb_recs - number of records in the queue
-	**	\param [in] type - Queue implementation type: FIFO, LIFO
+	**	\param [in] type - cppQueue implementation type: FIFO, LIFO
 	**	\param [in] overwrite - Overwrite previous records when queue is full
 	**	\return nothing
 	**/
-	Queue(const uint16_t size_rec, const uint16_t nb_recs=20, const QueueType type=FIFO, const bool overwrite=false);
+	cppQueue(const uint16_t size_rec, const uint16_t nb_recs=20, const cppQueueType type=FIFO, const bool overwrite=false);
 
-	/*!	\brief Queue destructor: release dynamically allocated queue
+	/*!	\brief cppQueue destructor: release dynamically allocated queue
 	**/
-	~Queue();
+	~cppQueue();
 
 	/*!	\brief Flush queue, restarting from empty queue
 	**/
 	void flush(void);
 
 	/*!	\brief Clean queue, restarting from empty queue
-	**	\deprecated clean was already used in Queue lib, alias is made to keep compatibility with earlier versions
+	**	\deprecated clean was already used in cppQueue lib, alias is made to keep compatibility with earlier versions
 	**/
 	inline void clean(void) __attribute__((always_inline)) {
 		flush(); }
 
 	/*!	\brief get initialization state of the queue
-	**	\return Queue initialization status
+	**	\return cppQueue initialization status
 	**	\retval true if queue is allocated
 	**	\retval false is queue is not allocated
 	**/
@@ -75,7 +75,7 @@ public:
 		return (init == QUEUE_INITIALIZED) ? true : false; }
 
 	/*!	\brief get emptiness state of the queue
-	**	\return Queue emptiness status
+	**	\return cppQueue emptiness status
 	**	\retval true if queue is empty
 	**	\retval false is not empty
 	**/
@@ -83,7 +83,7 @@ public:
 		return (!cnt) ? true : false; }
 
 	/*!	\brief get fullness state of the queue
-	**	\return Queue fullness status
+	**	\return cppQueue fullness status
 	**	\retval true if queue is full
 	**	\retval false is not full
 	**/
@@ -104,7 +104,7 @@ public:
 		return cnt; }
 
 	/*!	\brief get number of records in the queue (same as getCount)
-	**	\deprecated nbRecs was already used in Queue lib, alias is made to keep compatibility with earlier versions
+	**	\deprecated nbRecs was already used in cppQueue lib, alias is made to keep compatibility with earlier versions
 	**	\return Number of records stored in the queue
 	**/
 	inline uint16_t nbRecs(void) __attribute__((always_inline)) {
@@ -137,7 +137,7 @@ public:
 	/*!	\brief Pull record from queue (same as pop)
 	**	\warning If using push, pop, peek, drop, peekItem and/or peekPrevious in both interrupts and main application,
 	**				you shall disable interrupts in main application when using these functions
-	**	\deprecated pull was already used in Queue lib, alias is made to keep compatibility with earlier versions
+	**	\deprecated pull was already used in cppQueue lib, alias is made to keep compatibility with earlier versions
 	**	\param [in,out] record - pointer to record to be pulled from queue
 	**	\return Pull status
 	**	\retval true if successfully pulled from queue

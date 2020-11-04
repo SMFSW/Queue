@@ -7,7 +7,7 @@
   This example code is in the public domain.
 
   created 22 March 2017
-  modified 12 July 2017
+  modified 04 November 2020
   by SMFSW
  */
 
@@ -15,7 +15,7 @@
 
 uint16_t in = 0;
 
-Queue	q(sizeof(in), 10, FIFO);	// Instantiate queue
+cppQueue	q(sizeof(in), 10, FIFO);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {

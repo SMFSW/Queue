@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017-2019 SMFSW
+2017-2020 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -9,6 +9,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+
+v1.9:	4 Nov 2020:
+- Queue class renamed to cppQueue
 
 v1.8:	4 Nov 2019:
 - const qualifiers added where missing

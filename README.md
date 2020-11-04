@@ -4,9 +4,12 @@ Queue handling library (designed on Arduino)
 
 This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 
+Queue class has since start been called `Queue`. Unfortunately, on some platforms or when using FreeRTOS, Queue is already declared.
+For compatibility purposes, `Queue` class has been renamed to `cppQueue`. Sorry for the inconvenience...
+
 ## Usage
 
-- Declare a Queue instance `(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)` (called `q` below):
+- Declare a cppQueue instance `(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)` (called `q` below):
   - `size_rec` - size of a record in the queue
   - `nb_recs` - number of records in the queue
   - `type` - Queue implementation type: _FIFO_, _LIFO_

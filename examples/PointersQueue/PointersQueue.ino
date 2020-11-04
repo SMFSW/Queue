@@ -5,6 +5,7 @@
   This example code is in the public domain.
 
   created 25 May 2018
+  modified 04 November 2020
   by SMFSW
  */
 
@@ -17,7 +18,7 @@ const char * str[3] = {
 	">>> to access methods from the string class."
 };
 
-Queue	q(sizeof(String *), 3, FIFO);	// Instantiate queue
+cppQueue	q(sizeof(String *), 3, FIFO);	// Instantiate queue
 
 
 // the setup function runs once when you press reset or power the board

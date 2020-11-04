@@ -7,7 +7,7 @@
   This example code is in the public domain.
 
   created 22 March 2017
-  modified 12 July 2017
+  modified 04 November 2020
   by SMFSW
  */
 
@@ -31,7 +31,7 @@ Rec tab[6] = {
 };
 
 
-Queue	q(sizeof(Rec), 10, IMPLEMENTATION);	// Instantiate queue
+cppQueue	q(sizeof(Rec), 10, IMPLEMENTATION);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {

@@ -1,15 +1,13 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2019, SMFSW
-** \brief Queue handling library (designed on Arduino)
-** \details Queue handling library (designed on Arduino)
+** \copyright BSD 3-Clause License (c) 2017-2020, SMFSW
+** \brief cppQueue handling library (designed on Arduino)
+** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
 /****************************************************************/
-extern "C" {
-	#include <string.h>
-	#include <stdlib.h>
-}
+#include <string.h>
+#include <stdlib.h>
 
 #include "cppQueue.h"
 /****************************************************************/
@@ -23,8 +21,6 @@ extern "C" {
 **/
 static inline void __attribute__((nonnull, always_inline)) inc_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
-//	(*pIdx)++;
-//	*pIdx %= end;
 	if (*pIdx < end - 1)	{ (*pIdx)++; }
 	else					{ *pIdx = start; }
 }
@@ -42,7 +38,7 @@ static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * co
 }
 
 
-Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType type, const bool overwrite)
+cppQueue::cppQueue(const uint16_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite)
 {
 	const uint32_t size = nb_recs * size_rec;
 
@@ -56,20 +52,20 @@ Queue::Queue(const uint16_t size_rec, const uint16_t nb_recs, const QueueType ty
 	//if (queue)	{ free(queue); }	// Free existing data (if any)
 	queue = (uint8_t *) malloc(size);
 
-	if (queue == NULL)	{ queue_sz = 0; return; }	// Return here if Queue not allocated
+	if (queue == NULL)	{ queue_sz = 0; return; }	// Return here if cppQueue not allocated
 	else				{ queue_sz = size; }
 
 	init = QUEUE_INITIALIZED;
 	flush();
 }
 
-Queue::~Queue()
+cppQueue::~cppQueue()
 {
 	if (init == QUEUE_INITIALIZED)	free(queue);
 }
 
 
-void Queue::flush(void)
+void cppQueue::flush(void)
 {
 	in = 0;
 	out = 0;
@@ -77,7 +73,7 @@ void Queue::flush(void)
 }
 
 
-bool __attribute__((nonnull)) Queue::push(const void * const record)
+bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 {
 	if ((!ovw) && isFull())	{ return false; }
 
@@ -87,7 +83,7 @@ bool __attribute__((nonnull)) Queue::push(const void * const record)
 	inc_idx(&in, rec_nb, 0);
 
 	if (!isFull())	{ cnt++; }	// Increase records count
-	else if (ovw)				// Queue is full and overwrite is allowed
+	else if (ovw)				// cppQueue is full and overwrite is allowed
 	{
 		if (impl == FIFO)			{ inc_idx(&out, rec_nb, 0); }	// as oldest record is overwritten, increment out
 		//else if (impl == LIFO)	{}								// Nothing to do in this case
@@ -96,7 +92,7 @@ bool __attribute__((nonnull)) Queue::push(const void * const record)
 	return true;
 }
 
-bool __attribute__((nonnull)) Queue::pop(void * const record)
+bool __attribute__((nonnull)) cppQueue::pop(void * const record)
 {
 	const uint8_t * pStart;
 
@@ -120,7 +116,7 @@ bool __attribute__((nonnull)) Queue::pop(void * const record)
 }
 
 
-bool __attribute__((nonnull)) Queue::peek(void * const record)
+bool __attribute__((nonnull)) cppQueue::peek(void * const record)
 {
 	const uint8_t *	pStart;
 
@@ -144,7 +140,7 @@ bool __attribute__((nonnull)) Queue::peek(void * const record)
 }
 
 
-bool Queue::drop(void)
+bool cppQueue::drop(void)
 {
 	if (isEmpty())			{ return false; }	// No more records
 
@@ -157,7 +153,7 @@ bool Queue::drop(void)
 }
 
 
-bool Queue::peekIdx(void * const record, const uint16_t idx)
+bool cppQueue::peekIdx(void * const record, const uint16_t idx)
 {
 	const uint8_t * pStart;
 

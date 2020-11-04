@@ -6,7 +6,6 @@
 # Datatypes (KEYWORD1)
 #######################################
 cppQueue	KEYWORD1
-Queue	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)

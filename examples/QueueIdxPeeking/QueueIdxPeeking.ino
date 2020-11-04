@@ -6,6 +6,7 @@
   This example code is in the public domain.
 
   created 3 November 2019
+  modified 04 November 2020
   by SMFSW
  */
 
@@ -33,7 +34,7 @@ Rec tab[9] = {
 	{ 0x7890, 0xABCD }
 };
 
-Queue	q(sizeof(Rec), NB_RECS, IMPLEMENTATION, OVERWRITE);	// Instantiate queue
+cppQueue	q(sizeof(Rec), NB_RECS, IMPLEMENTATION, OVERWRITE);	// Instantiate queue
 
 // the setup function runs once when you press reset or power the board
 void setup() {
