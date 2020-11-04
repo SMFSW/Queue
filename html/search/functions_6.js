@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nbrecs',['nbRecs',['../class_queue.html#a7cc49f7f967ebd27a4cab081943789d6',1,'Queue']]]
+  ['nbrecs',['nbRecs',['../classcpp_queue.html#a69bf2d6de7c66425c5b2d2c30048075f',1,'cppQueue']]]
 ];

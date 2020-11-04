@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queuetype',['QueueType',['../cpp_queue_8h.html#ac8f074d44698ea46a2cb3ed102f6254a',1,'cppQueue.h']]]
+  ['cppqueuetype',['cppQueueType',['../cpp_queue_8h.html#a482d5615e73312b4f0fed60f3439a3c7',1,'cppQueue.h']]]
 ];

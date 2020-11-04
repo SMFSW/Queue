@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['q',['q',['../_lib_tst_8ino.html#acf5a5d019affe429e0c80600302e93d2',1,'q():&#160;LibTst.ino'],['../_pointers_queue_8ino.html#a0f0896a900ec176c2ddbb97298c9560c',1,'q():&#160;PointersQueue.ino'],['../_rollover_test_8ino.html#a1d56185c5c833a2a08f4c37f3a5aadb9',1,'q():&#160;RolloverTest.ino'],['../_simple_queue_8ino.html#acfd5fce6615d4c84abd4783ffa85e158',1,'q():&#160;SimpleQueue.ino']]],
-  ['queue',['Queue',['../class_queue.html',1,'Queue'],['../class_queue.html#a0665bde7cafdc4296886a65e8c02f1b6',1,'Queue::Queue()']]],
-  ['queue_5finitialized',['QUEUE_INITIALIZED',['../cpp_queue_8h.html#ac2d7a2672ce7ea2565f4b909ae8d8454',1,'cppQueue.h']]],
-  ['queuetype',['QueueType',['../cpp_queue_8h.html#ac8f074d44698ea46a2cb3ed102f6254a',1,'cppQueue.h']]]
+  ['peek',['peek',['../classcpp_queue.html#ae98c3e922e2dd62c973dae1c0c964f10',1,'cppQueue']]],
+  ['peekidx',['peekIdx',['../classcpp_queue.html#a4d680a9f8dfcd9087966d7795a0247fe',1,'cppQueue::peekIdx(void *const record, const uint16_t idx) __attribute__((nonnull))'],['../classcpp_queue.html#a5d30a292feb141fdfcee588355ff4f8e',1,'cppQueue::peekIdx(record, idx)']]],
+  ['peekprevious',['peekPrevious',['../classcpp_queue.html#ad4c97131f619d8054534d2cc7d0e7cbe',1,'cppQueue']]],
+  ['pointersqueue_2eino',['PointersQueue.ino',['../_pointers_queue_8ino.html',1,'']]],
+  ['pop',['pop',['../classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac',1,'cppQueue']]],
+  ['pull',['pull',['../classcpp_queue.html#a8fefeea934d4d7e59fa0556202d7ff67',1,'cppQueue']]],
+  ['push',['push',['../classcpp_queue.html#ada7848b156357297af8e6704de001b82',1,'cppQueue']]]
 ];

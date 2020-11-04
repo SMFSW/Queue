@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['setup',['setup',['../_lib_tst_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;LibTst.ino'],['../_pointers_queue_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;PointersQueue.ino'],['../_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;RolloverTest.ino'],['../_simple_queue_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;SimpleQueue.ino']]],
-  ['simplequeue_2eino',['SimpleQueue.ino',['../_simple_queue_8ino.html',1,'']]],
-  ['sizeof',['sizeOf',['../class_queue.html#af064936c416797c9200adc19286cef2b',1,'Queue']]],
-  ['str',['str',['../_pointers_queue_8ino.html#a790203f68a182ca9f1886d5981b7dfce',1,'PointersQueue.ino']]],
-  ['strrec',['strRec',['../structstr_rec.html',1,'']]]
+  ['rec',['Rec',['../_lib_tst_8ino.html#af9c87175d8c5dd2a7744b9a4714127f1',1,'Rec():&#160;LibTst.ino'],['../_queue_duplicates_8ino.html#af9c87175d8c5dd2a7744b9a4714127f1',1,'Rec():&#160;QueueDuplicates.ino'],['../_queue_idx_peeking_8ino.html#af9c87175d8c5dd2a7744b9a4714127f1',1,'Rec():&#160;QueueIdxPeeking.ino'],['../_simple_queue_8ino.html#af9c87175d8c5dd2a7744b9a4714127f1',1,'Rec():&#160;SimpleQueue.ino']]],
+  ['rollovertest_2eino',['RolloverTest.ino',['../_rollover_test_8ino.html',1,'']]]
 ];

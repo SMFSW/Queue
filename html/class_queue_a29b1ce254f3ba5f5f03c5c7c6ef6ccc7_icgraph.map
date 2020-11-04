@@ -1,9 +1,0 @@
-<map id="Queue::drop" name="Queue::drop">
-<area shape="rect" id="node2" href="$class_queue.html#a5a715cb528a84594bab04cb73afbfc4b" title="Peek record from queue. " alt="" coords="147,100,243,127"/>
-<area shape="rect" id="node8" href="$class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b" title="Pull record from queue (same as pop) " alt="" coords="433,176,521,203"/>
-<area shape="rect" id="node3" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title="loop" alt="" coords="806,24,853,51"/>
-<area shape="rect" id="node4" href="$class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da" title="Pop record from queue. " alt="" coords="291,75,381,101"/>
-<area shape="rect" id="node5" href="$class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7" title="Push record to queue. " alt="" coords="429,75,525,101"/>
-<area shape="rect" id="node7" href="$class_queue.html#ae0eec88df854ceb0d4f74a8b927d6521" title="get number of records left in the queue " alt="" coords="574,151,757,177"/>
-<area shape="rect" id="node6" href="$_rollover_test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="638,100,693,127"/>
-</map>

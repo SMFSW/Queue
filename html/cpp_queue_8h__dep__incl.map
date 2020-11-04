@@ -1,7 +1,9 @@
 <map id="src/cppQueue.h" name="src/cppQueue.h">
-<area shape="rect" id="node2" href="$_lib_tst_8ino.html" title="examples/LibTst/LibTst.ino" alt="" coords="5,88,184,115"/>
-<area shape="rect" id="node3" href="$_pointers_queue_8ino.html" title="examples/PointersQueue\l/PointersQueue.ino" alt="" coords="208,81,376,122"/>
-<area shape="rect" id="node4" href="$_rollover_test_8ino.html" title="examples/RolloverTest\l/RolloverTest.ino" alt="" coords="401,81,556,122"/>
-<area shape="rect" id="node5" href="$_simple_queue_8ino.html" title="examples/SimpleQueue\l/SimpleQueue.ino" alt="" coords="581,81,740,122"/>
-<area shape="rect" id="node6" href="$cpp_queue_8cpp.html" title="Queue handling library (designed on Arduino) " alt="" coords="765,88,893,115"/>
+<area shape="rect" id="node2" href="$_lib_tst_8ino.html" title="examples/LibTst/LibTst.ino" alt="" coords="5,87,191,114"/>
+<area shape="rect" id="node3" href="$_pointers_queue_8ino.html" title="examples/PointersQueue\l/PointersQueue.ino" alt="" coords="215,80,397,121"/>
+<area shape="rect" id="node4" href="$_queue_duplicates_8ino.html" title="examples/QueueDuplicates\l/QueueDuplicates.ino" alt="" coords="422,80,619,121"/>
+<area shape="rect" id="node5" href="$_queue_idx_peeking_8ino.html" title="examples/QueueIdxPeeking\l/QueueIdxPeeking.ino" alt="" coords="644,80,843,121"/>
+<area shape="rect" id="node6" href="$_rollover_test_8ino.html" title="examples/RolloverTest\l/RolloverTest.ino" alt="" coords="867,80,1030,121"/>
+<area shape="rect" id="node7" href="$_simple_queue_8ino.html" title="examples/SimpleQueue\l/SimpleQueue.ino" alt="" coords="1055,80,1229,121"/>
+<area shape="rect" id="node8" href="$cpp_queue_8cpp.html" title="cppQueue handling library (designed on Arduino) " alt="" coords="1253,87,1391,114"/>
 </map>

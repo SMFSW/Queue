@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['peek',['peek',['../class_queue.html#a5a715cb528a84594bab04cb73afbfc4b',1,'Queue']]],
-  ['pop',['pop',['../class_queue.html#a0ffe1950f8d1afcc4ec0e0fb3de802da',1,'Queue']]],
-  ['pull',['pull',['../class_queue.html#a68c5caf6d2106316ea7a6b08597ce34b',1,'Queue']]],
-  ['push',['push',['../class_queue.html#a415958dbf4a259a52bbc30e20af0d4a7',1,'Queue']]]
+  ['peek',['peek',['../classcpp_queue.html#ae98c3e922e2dd62c973dae1c0c964f10',1,'cppQueue']]],
+  ['peekidx',['peekIdx',['../classcpp_queue.html#a4d680a9f8dfcd9087966d7795a0247fe',1,'cppQueue::peekIdx(void *const record, const uint16_t idx) __attribute__((nonnull))'],['../classcpp_queue.html#a5d30a292feb141fdfcee588355ff4f8e',1,'cppQueue::peekIdx(record, idx)']]],
+  ['peekprevious',['peekPrevious',['../classcpp_queue.html#ad4c97131f619d8054534d2cc7d0e7cbe',1,'cppQueue']]],
+  ['pop',['pop',['../classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac',1,'cppQueue']]],
+  ['pull',['pull',['../classcpp_queue.html#a8fefeea934d4d7e59fa0556202d7ff67',1,'cppQueue']]],
+  ['push',['push',['../classcpp_queue.html#ada7848b156357297af8e6704de001b82',1,'cppQueue']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['drop',['drop',['../class_queue.html#a29b1ce254f3ba5f5f03c5c7c6ef6ccc7',1,'Queue']]]
+  ['drop',['drop',['../classcpp_queue.html#aa97d91c8c0081162d41878e9d34fa5ce',1,'cppQueue']]]
 ];

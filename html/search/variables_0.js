@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['entry1',['entry1',['../structstr_rec.html#ac80c120b356e9fdcebd026d17c0035d5',1,'strRec']]],
-  ['entry2',['entry2',['../structstr_rec.html#a867dd036dc5ed84f337b43c820ac230a',1,'strRec']]]
+  ['always_5finline',['always_inline',['../classcpp_queue.html#a103e9aad4fff50eb8b5a4a76c0e71145',1,'cppQueue']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rollovertest_2eino',['RolloverTest.ino',['../_rollover_test_8ino.html',1,'']]]
+  ['queueduplicates_2eino',['QueueDuplicates.ino',['../_queue_duplicates_8ino.html',1,'']]],
+  ['queueidxpeeking_2eino',['QueueIdxPeeking.ino',['../_queue_idx_peeking_8ino.html',1,'']]]
 ];
