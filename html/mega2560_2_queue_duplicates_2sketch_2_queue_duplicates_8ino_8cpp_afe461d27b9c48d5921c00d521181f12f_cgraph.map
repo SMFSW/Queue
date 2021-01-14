@@ -1,0 +1,6 @@
+<map id="loop" name="loop">
+<area shape="rect" id="node2" href="$classcpp_queue.html#ad4c97131f619d8054534d2cc7d0e7cbe" title="Peek previous record from queue. " alt="" coords="103,5,283,32"/>
+<area shape="rect" id="node3" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue. " alt="" coords="129,56,256,83"/>
+<area shape="rect" id="node4" href="$classcpp_queue.html#a4d680a9f8dfcd9087966d7795a0247fe" title="Peek record at index from queue. " alt="" coords="121,107,265,133"/>
+<area shape="rect" id="node5" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue. " alt="" coords="133,157,252,184"/>
+</map>
