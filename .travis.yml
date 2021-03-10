@@ -1,4 +1,5 @@
-language: c
+sudo: false
+language: ruby
 
 addons:
   apt:
@@ -17,13 +18,12 @@ env:
      - GH_REPO_REF: github.com/SMFSW/Queue.git
      - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile.auto
 
-before_install:
-   - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
-
 script:
-   - build_main_platforms
+  - bundle install
+  - bundle exec arduino_ci_remote.rb
 
 # Generate and deploy documentation
 after_success:
+  - source <(curl -SLs https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/install.sh)
   - source <(curl -SLs  https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/library_check.sh)
   - source <(curl -SLs  https://raw.githubusercontent.com/SMFSW/travis-ci-arduino/master/doxy_gen_and_deploy.sh)
