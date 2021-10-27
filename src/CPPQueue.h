@@ -19,19 +19,19 @@
 /*!\enum enumcppQueueType
 ** \brief cppQueue behavior enumeration (FIFO, LIFO)
 **/
-typedef enum enumcppQueueType {
-	FIFO = 0,	//!< First In First Out behavior
-	LIFO = 1	//!< Last In First Out behavior
-} cppQueueType;
+enum class CPPQueueType {
+	FIFO,	//!< First In First Out behavior
+	LIFO,	//!< Last In First Out behavior
+};
 
 
 /*!	\class cppQueue
 **	\brief Class containing the required methods for handling the queue
 **/
-class cppQueue
+class CPPQueue
 {
 private:
-	cppQueueType	impl;		//!< cppQueue implementation: FIFO LIFO
+	CPPQueueType	impl;		//!< cppQueue implementation: FIFO LIFO
 	bool			ovw;		//!< Overwrite previous records when queue is full allowed
 	uint16_t		rec_nb;		//!< number of records in the queue
 	uint16_t		rec_sz;		//!< Size of a record
@@ -50,11 +50,11 @@ public:
 	**	\param [in] overwrite - Overwrite previous records when queue is full
 	**	\return nothing
 	**/
-	cppQueue(const uint16_t size_rec, const uint16_t nb_recs=20, const cppQueueType type=FIFO, const bool overwrite=false);
+	CPPQueue(const uint16_t size_rec, const uint16_t nb_recs=20, const CPPQueueType type=CPPQueueType::FIFO, const bool overwrite=false);
 
 	/*!	\brief cppQueue destructor: release dynamically allocated queue
 	**/
-	~cppQueue();
+	~CPPQueue();
 
 	/*!	\brief Flush queue, restarting from empty queue
 	**/
@@ -194,3 +194,6 @@ public:
 };
 
 #endif /* __CPPQUEUE_H */
+
+//Added by Sloeber 
+#pragma once

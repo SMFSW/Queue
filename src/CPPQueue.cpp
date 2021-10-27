@@ -6,10 +6,11 @@
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
 /****************************************************************/
+
 #include <string.h>
 #include <stdlib.h>
+#include "CPPQueue.h"
 
-#include "cppQueue.h"
 /****************************************************************/
 
 
@@ -38,7 +39,7 @@ static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * co
 }
 
 
-cppQueue::cppQueue(const uint16_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite)
+CPPQueue::CPPQueue(const uint16_t size_rec, const uint16_t nb_recs, const CPPQueueType type, const bool overwrite)
 {
 	const uint32_t size = nb_recs * size_rec;
 
@@ -59,13 +60,13 @@ cppQueue::cppQueue(const uint16_t size_rec, const uint16_t nb_recs, const cppQue
 	flush();
 }
 
-cppQueue::~cppQueue()
+CPPQueue::~CPPQueue()
 {
 	if (init == QUEUE_INITIALIZED)	free(queue);
 }
 
 
-void cppQueue::flush(void)
+void CPPQueue::flush(void)
 {
 	in = 0;
 	out = 0;
@@ -73,7 +74,7 @@ void cppQueue::flush(void)
 }
 
 
-bool __attribute__((nonnull)) cppQueue::push(const void * const record)
+bool __attribute__((nonnull)) CPPQueue::push(const void * const record)
 {
 	if ((!ovw) && isFull())	{ return false; }
 
@@ -85,25 +86,25 @@ bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 	if (!isFull())	{ cnt++; }	// Increase records count
 	else if (ovw)				// cppQueue is full and overwrite is allowed
 	{
-		if (impl == FIFO)			{ inc_idx(&out, rec_nb, 0); }	// as oldest record is overwritten, increment out
+		if (impl == CPPQueueType::FIFO)			{ inc_idx(&out, rec_nb, 0); }	// as oldest record is overwritten, increment out
 		//else if (impl == LIFO)	{}								// Nothing to do in this case
 	}
 
 	return true;
 }
 
-bool __attribute__((nonnull)) cppQueue::pop(void * const record)
+bool __attribute__((nonnull)) CPPQueue::pop(void * const record)
 {
 	const uint8_t * pStart;
 
 	if (isEmpty())	{ return false; }	// No more records
 
-	if (impl == FIFO)
+	if (impl == CPPQueueType::FIFO)
 	{
 		pStart = queue + (rec_sz * out);
 		inc_idx(&out, rec_nb, 0);
 	}
-	else if (impl == LIFO)
+	else if (impl == CPPQueueType::LIFO)
 	{
 		dec_idx(&in, rec_nb, 0);
 		pStart = queue + (rec_sz * in);
@@ -116,18 +117,18 @@ bool __attribute__((nonnull)) cppQueue::pop(void * const record)
 }
 
 
-bool __attribute__((nonnull)) cppQueue::peek(void * const record)
+bool __attribute__((nonnull)) CPPQueue::peek(void * const record)
 {
 	const uint8_t *	pStart;
 
 	if (isEmpty())	{ return false; }	// No more records
 
-	if (impl == FIFO)
+	if (impl == CPPQueueType::FIFO)
 	{
 		pStart = queue + (rec_sz * out);
 		// No change on out var as it's just a peek
 	}
-	else if (impl == LIFO)
+	else if (impl == CPPQueueType::LIFO)
 	{
 		uint16_t rec = in;	// Temporary var for peek (no change on in with dec_idx)
 		dec_idx(&rec, rec_nb, 0);
@@ -140,12 +141,12 @@ bool __attribute__((nonnull)) cppQueue::peek(void * const record)
 }
 
 
-bool cppQueue::drop(void)
+bool CPPQueue::drop(void)
 {
 	if (isEmpty())			{ return false; }	// No more records
 
-	if (impl == FIFO)		{ inc_idx(&out, rec_nb, 0); }
-	else if (impl == LIFO)	{ dec_idx(&in, rec_nb, 0); }
+	if (impl == CPPQueueType::FIFO)		{ inc_idx(&out, rec_nb, 0); }
+	else if (impl == CPPQueueType::LIFO)	{ dec_idx(&in, rec_nb, 0); }
 	else					{ return false; }
 
 	cnt--;	// Decrease records count
@@ -153,17 +154,17 @@ bool cppQueue::drop(void)
 }
 
 
-bool cppQueue::peekIdx(void * const record, const uint16_t idx)
+bool CPPQueue::peekIdx(void * const record, const uint16_t idx)
 {
 	const uint8_t * pStart;
 
 	if (idx + 1 > getCount())	{ return false; }	// Index out of range
 
-	if (impl == FIFO)
+	if (impl == CPPQueueType::FIFO)
 	{
 		pStart = queue + (rec_sz * ((out + idx) % rec_nb));
 	}
-	else if (impl == LIFO)
+	else if (impl == CPPQueueType::LIFO)
 	{
 		pStart = queue + (rec_sz * idx);
 	}
