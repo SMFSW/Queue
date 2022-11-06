@@ -1,6 +1,6 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2020, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2022, SMFSW
 ** \brief cppQueue handling library (designed on Arduino)
 ** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
@@ -38,30 +38,36 @@ static inline void __attribute__((nonnull, always_inline)) dec_idx(uint16_t * co
 }
 
 
-cppQueue::cppQueue(const uint16_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite)
+cppQueue::cppQueue(const size_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite, void * const pQDat, const size_t lenQDat)
 {
+	init = 0;
+	rec_nb = 0;	// rec_nb needs to be 0 to ensure proper push behavior when queue is not allocated
+	ovw = 0;	// ovw needs to be 0 to ensure proper push behavior when queue is not allocated
+	flush();	// other variables needs to be 0 to ensure proper functions behavior when queue is not allocated
+
 	const uint32_t size = nb_recs * size_rec;
 
-	rec_nb = nb_recs;
-	rec_sz = size_rec;
-	impl = type;
-	ovw = overwrite;
+	dynamic = (pQDat != NULL) ? true : false;
 
-	init = 0;
+	if (dynamic)				{ queue = (uint8_t *) malloc(size); }
+	else if (lenQDat < size)	{ queue = NULL; }	// Check static Queue data size
+	else						{ queue = (uint8_t *) pQDat; }
 
-	//if (queue)	{ free(queue); }	// Free existing data (if any)
-	queue = (uint8_t *) malloc(size);
+	if (queue != NULL)
+	{
+		queue_sz = size;
+		rec_sz = size_rec;
+		rec_nb = nb_recs;
+		impl = type;
+		ovw = overwrite;
 
-	if (queue == NULL)	{ queue_sz = 0; return; }	// Return here if cppQueue not allocated
-	else				{ queue_sz = size; }
-
-	init = QUEUE_INITIALIZED;
-	flush();
+		init = QUEUE_INITIALIZED;
+	}
 }
 
 cppQueue::~cppQueue()
 {
-	if (init == QUEUE_INITIALIZED)	free(queue);
+	if ((init == QUEUE_INITIALIZED) && dynamic && (queue != NULL))	{ free(queue); }
 }
 
 
@@ -75,7 +81,7 @@ void cppQueue::flush(void)
 
 bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 {
-	if ((!ovw) && isFull())	{ return false; }
+	if ((!ovw) && isFull()) { return false; }
 
 	uint8_t * const pStart = queue + (rec_sz * in);
 	memcpy(pStart, record, rec_sz);

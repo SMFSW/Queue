@@ -9,11 +9,13 @@ For compatibility purposes, `Queue` class has been renamed to `cppQueue`. Sorry 
 
 ## Usage
 
-- Declare a `cppQueue` instance `(uint16_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, overwrite=false)` (called `q` below):
+- Declare a `cppQueue` instance `(size_t size_rec, uint16_t nb_recs=20, QueueType type=FIFO, bool overwrite=false, void * pQDat=NULL, size_t lenQDat=0)` (called `q` below):
   - `size_rec` - size of a record in the queue
   - `nb_recs` - number of records in the queue
-  - `type` - Queue implementation type: _FIFO_, _LIFO_
-  - `overwrite` - Overwrite previous records when queue is full if set to _true_
+  - `type` - queue implementation type: _FIFO_, _LIFO_
+  - `overwrite` - overwrite previous records when queue is full if set to _true_
+  - `pQDat` - pointer to static data queue
+  - `lenQDat` - length of static data queue (in bytes)
 - Push stuff to the queue using `q.push(void * rec)`
   - returns `true` if successfully pushed into queue
   - returns `false` is queue is full

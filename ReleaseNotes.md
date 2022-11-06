@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017-2021 SMFSW
+2017-2022 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -9,6 +9,13 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+
+v1.10:	6 Nov 2022:
+- Constructor parameters added to setup a queue from statically allocated data area
+- Constructor refactoring for consistency and robustness (when using queue functions regardless init performed with success)
+- Doxyfiles update
+- Outdated travisCI status in README.md removed
+- LICENSE years update
 
 v1.9.1:	14 Jan 2021:
 - SerialQueue.ino example added

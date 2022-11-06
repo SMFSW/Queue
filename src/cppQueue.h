@@ -1,6 +1,6 @@
 /*!\file cppQueue.h
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2020, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2022, SMFSW
 ** \brief cppQueue handling library (designed on Arduino)
 ** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
@@ -33,9 +33,10 @@ class cppQueue
 private:
 	cppQueueType	impl;		//!< cppQueue implementation: FIFO LIFO
 	bool			ovw;		//!< Overwrite previous records when queue is full allowed
+	bool			dynamic;	//!< Set to true when queue is dynamically allocated
+	size_t			queue_sz;	//!< Size of the full queue
+	size_t			rec_sz;		//!< Size of a record
 	uint16_t		rec_nb;		//!< number of records in the queue
-	uint16_t		rec_sz;		//!< Size of a record
-	uint32_t		queue_sz;	//!< Size of the full queue
 	uint8_t *		queue;		//!< cppQueue start pointer (when allocated)
 
 	uint16_t		in;			//!< number of records pushed into the queue
@@ -48,9 +49,11 @@ public:
 	**	\param [in] nb_recs - number of records in the queue
 	**	\param [in] type - cppQueue implementation type: FIFO, LIFO
 	**	\param [in] overwrite - Overwrite previous records when queue is full
+	**	\param [in] pQDat - Pointer to static data queue
+	**	\param [in] lenQDat - Length of static data queue (in bytes) for static array size check against required size for queue
 	**	\return nothing
 	**/
-	cppQueue(const uint16_t size_rec, const uint16_t nb_recs=20, const cppQueueType type=FIFO, const bool overwrite=false);
+	cppQueue(const size_t size_rec, const uint16_t nb_recs=20, const cppQueueType type=FIFO, const bool overwrite=false, void * const pQDat=NULL, const size_t lenQDat=0);
 
 	/*!	\brief cppQueue destructor: release dynamically allocated queue
 	**/

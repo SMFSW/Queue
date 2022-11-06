@@ -1,16 +1,16 @@
 #######################################
-# Syntax Coloring Map For Queue
+# Syntax Coloring Map For cppQueue
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
+cppQueueType	KEYWORD1
 cppQueue	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-init	KEYWORD2
 clean	KEYWORD2
 flush	KEYWORD2
 isInitialized	KEYWORD2
