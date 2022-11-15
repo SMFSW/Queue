@@ -56,6 +56,7 @@ In this particular case, dropping decision must be made before re-enabling inter
 ## Examples included
 
 - [SimpleQueue.ino](examples/SimpleQueue/SimpleQueue.ino): Simple queue example (both LIFO FIFO implementations can be tested)
+- [SimpleQueueStatic.ino](examples/SimpleQueueStatic/SimpleQueueStatic.ino): Simple queue example using static queue data array (both LIFO FIFO implementations can be tested)
 - [PointersQueue.ino](examples/PointersQueue/PointersQueue.ino): Queue of string pointers for string processing
 - [SerialQueue.ino](examples/SerialQueue/SerialQueue.ino): Print characters received from Serial to Serial after reception of EOT char
 - [QueueDuplicates.ino](examples/QueueDuplicates/QueueDuplicates.ino): Simple test to test queue duplicates before pushing to queue

@@ -10,7 +10,8 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
-v1.10:	6 Nov 2022:
+v1.10:	15 Nov 2022:
+- SimpleQueueStatic.ino example added
 - Constructor parameters added to setup a queue from statically allocated data area
 - Constructor refactoring for consistency and robustness (when using queue functions regardless init performed with success)
 - Doxyfiles update
