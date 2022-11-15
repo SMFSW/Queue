@@ -47,7 +47,7 @@ cppQueue::cppQueue(const size_t size_rec, const uint16_t nb_recs, const cppQueue
 
 	const uint32_t size = nb_recs * size_rec;
 
-	dynamic = (pQDat != NULL) ? true : false;
+	dynamic = (pQDat == NULL) ? true : false;
 
 	if (dynamic)				{ queue = (uint8_t *) malloc(size); }
 	else if (lenQDat < size)	{ queue = NULL; }	// Check static Queue data size
