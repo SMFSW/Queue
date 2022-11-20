@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Queue
-   &#160;<span id="projectnumber">1.9</span>
+   &#160;<span id="projectnumber">1.10</span>
    </div>
    <div id="projectbrief">Queue handling library</div>
   </td>
@@ -76,9 +76,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15b19a2d91c6812be8bd4d4f660d0f6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp_queue.html#a15b19a2d91c6812be8bd4d4f660d0f6c">cppQueue</a> (const uint16_t size_rec, const uint16_t nb_recs=20, const <a class="el" href="cpp_queue_8h.html#a482d5615e73312b4f0fed60f3439a3c7">cppQueueType</a> type=<a class="el" href="cpp_queue_8h.html#a19cc79f3e64762f556b022ece54fcd6ca7795ebef271efe70b28f37deb9a07a83">FIFO</a>, const bool overwrite=false)</td></tr>
-<tr class="memdesc:a15b19a2d91c6812be8bd4d4f660d0f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcpp_queue.html" title="Class containing the required methods for handling the queue. ">cppQueue</a> constructor  <a href="#a15b19a2d91c6812be8bd4d4f660d0f6c">More...</a><br /></td></tr>
-<tr class="separator:a15b19a2d91c6812be8bd4d4f660d0f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0dc9550f82be80849679bca652d470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp_queue.html#a8d0dc9550f82be80849679bca652d470">cppQueue</a> (const size_t size_rec, const uint16_t nb_recs=20, const <a class="el" href="cpp_queue_8h.html#a482d5615e73312b4f0fed60f3439a3c7">cppQueueType</a> type=<a class="el" href="cpp_queue_8h.html#a19cc79f3e64762f556b022ece54fcd6ca7795ebef271efe70b28f37deb9a07a83">FIFO</a>, const bool overwrite=false, void *const pQDat=NULL, const size_t lenQDat=0)</td></tr>
+<tr class="memdesc:a8d0dc9550f82be80849679bca652d470"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcpp_queue.html" title="Class containing the required methods for handling the queue. ">cppQueue</a> constructor  <a href="#a8d0dc9550f82be80849679bca652d470">More...</a><br /></td></tr>
+<tr class="separator:a8d0dc9550f82be80849679bca652d470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2ed1f2be66c5a1249ff625998eb5a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp_queue.html#abd2ed1f2be66c5a1249ff625998eb5a9">~cppQueue</a> ()</td></tr>
 <tr class="memdesc:abd2ed1f2be66c5a1249ff625998eb5a9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classcpp_queue.html" title="Class containing the required methods for handling the queue. ">cppQueue</a> destructor: release dynamically allocated queue  <a href="#abd2ed1f2be66c5a1249ff625998eb5a9">More...</a><br /></td></tr>
 <tr class="separator:abd2ed1f2be66c5a1249ff625998eb5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,8 +141,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class containing the required methods for handling the queue. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a15b19a2d91c6812be8bd4d4f660d0f6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15b19a2d91c6812be8bd4d4f660d0f6c">&#9670;&nbsp;</a></span>cppQueue()</h2>
+<a id="a8d0dc9550f82be80849679bca652d470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d0dc9550f82be80849679bca652d470">&#9670;&nbsp;</a></span>cppQueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +150,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">cppQueue::cppQueue </td>
           <td>(</td>
-          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>size_rec</em>, </td>
         </tr>
         <tr>
@@ -169,7 +169,19 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>overwrite</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>overwrite</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *const&#160;</td>
+          <td class="paramname"><em>pQDat</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>lenQDat</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,6 +198,8 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nb_recs</td><td>- number of records in the queue </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>- <a class="el" href="classcpp_queue.html" title="Class containing the required methods for handling the queue. ">cppQueue</a> implementation type: FIFO, LIFO </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">overwrite</td><td>- Overwrite previous records when queue is full </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pQDat</td><td>- Pointer to static data queue </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lenQDat</td><td>- Length of static data queue (in bytes) for static array size check against required size for queue </td></tr>
   </table>
   </dd>
 </dl>
