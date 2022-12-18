@@ -10,6 +10,9 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 
 ** Actual:
 
+v1.11:	18 Dec 2022:
+- Include missing stddef.h
+
 v1.10:	15 Nov 2022:
 - SimpleQueueStatic.ino example added
 - Constructor parameters added to setup a queue from statically allocated data area
