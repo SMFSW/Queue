@@ -10,6 +10,7 @@
 	#define __CPPQUEUE_H
 
 #include <inttypes.h>
+#include <stddef.h>
 /****************************************************************/
 
 
