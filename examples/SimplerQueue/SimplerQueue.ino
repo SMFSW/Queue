@@ -3,44 +3,57 @@
   Simpler queue demonstration
 
   Created: Apr 27, 2022 - by wrybread
-*/
+  Modified: 
+  			- Aug 3, 2022 - Improved by jarboer
+			- Jun, 23, 2023 - by jarboer
+ */
 
 #include <cppQueue.h>
 
+// Define the structure
 typedef struct strRec {
-  char  url[300];
-  char  misc1[255];
-} Rec;
+	/* Reduced both char array sizes significantly as they were extremely 
+		large and causing the program to not work correctly */
+	char url[50];
+	char misc1[50];
+} Record;
 
-cppQueue  queue1(sizeof(Rec), 10, LIFO, true); 
+// Create a LIFO queue
+cppQueue queue(sizeof(Record), 10, LIFO, false);
 
 void setup() {
-  Serial.begin(115200); 
-  
-  // Put a sample record into the queue
-  Rec test = {"http://google.com", "some stuff"};
-  queue1.push(&test);
+	Serial.begin(9600);
 
+	// Create a record and push it
+	Record test = { "http://google.com", "some stuff" };
+	queue.push(&test);
 }
 
-void loop() {  
+void loop() {
+	// Iterate through the queue
+	while (!queue.isEmpty()) {
+		// Create a record to store the data from the queue
+		Record queueRecord;
+		queue.pop(&queueRecord);
 
-  // iterate through the queue
-  while (!queue1.isEmpty())
-  {
-    Rec rec;
-    queue1.pop(&rec);
-    Serial.println("There's something in the queue!");
-    Serial.println();
-    Serial.print(rec.url);
-    Serial.print(" ");
-    Serial.print(rec.misc1);
+		// Display the record
+		/* Surrounded the String in F() to move it from RAM 
+		to the flash memory (which there is more of) */
+		Serial.println(F("There's something in the queue!"));
+		Serial.println();
+		Serial.print(queueRecord.url);
+		Serial.print(" ");
+		Serial.print(queueRecord.misc1);
 
-    Serial.println();
-    String url = rec.url;
-    Serial.println("URL = " + url);
-    
-    Serial.println();
-  }   
-  delay(1000);
+		/* NOTE: Using the String class increases the flash memory 
+				and RAM usage */
+		Serial.println();
+		String url = queueRecord.url;
+		Serial.print("URL = ");
+		Serial.println(url);
+
+		Serial.println();
+	}
+
+	delay(1000);
 }
