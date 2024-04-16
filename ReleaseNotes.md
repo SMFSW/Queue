@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017-2022 SMFSW
+2017-2024 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
@@ -9,6 +9,10 @@ Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 ------------
 
 ** Actual:
+
+v2.0:	15 Apr 2024:
+- No more inlines in header file (to generate proper static library)
+- MISRA refactoring
 
 v1.11:	18 Dec 2022:
 - Include missing stddef.h
