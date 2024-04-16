@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cppqueue',['cppQueue',['../classcpp_queue.html',1,'']]]
+  ['cppqueue_0',['cppQueue',['../classcpp_queue.html',1,'']]]
 ];

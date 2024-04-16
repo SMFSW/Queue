@@ -1,0 +1,7 @@
+<map id="cppQueue::getCount" name="cppQueue::getCount">
+<area shape="rect" id="Node000001" title="get number of records in the queue" alt="" coords="187,31,328,57"/>
+<area shape="rect" id="Node000002" href="$_lib_tst_8ino.html#afe461d27b9c48d5921c00d521181f12f" title=" " alt="" coords="49,5,95,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,35,95,24,95,19,173,30"/>
+<area shape="rect" id="Node000003" href="$classcpp_queue.html#a69bf2d6de7c66425c5b2d2c30048075f" title="get number of records in the queue (same as getCount)" alt="" coords="5,56,139,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,58,139,63,139,58,172,53"/>
+</map>

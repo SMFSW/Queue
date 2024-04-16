@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_5finitialized',['QUEUE_INITIALIZED',['../cpp_queue_8h.html#ac2d7a2672ce7ea2565f4b909ae8d8454',1,'cppQueue.h']]]
+  ['use_5fpeek_5fprevious_0',['USE_PEEK_PREVIOUS',['../_queue_duplicates_8ino.html#afa9320cd3e80f3356cd67fb322b37798',1,'QueueDuplicates.ino']]]
 ];

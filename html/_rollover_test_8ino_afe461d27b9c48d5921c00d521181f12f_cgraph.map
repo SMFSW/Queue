@@ -1,4 +1,7 @@
 <map id="loop" name="loop">
-<area shape="rect" id="node2" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue. " alt="" coords="103,5,229,32"/>
-<area shape="rect" id="node3" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue. " alt="" coords="107,56,225,83"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,51,57"/>
+<area shape="rect" id="Node000002" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue." alt="" coords="102,5,212,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,37,87,30,88,35,52,42"/>
+<area shape="rect" id="Node000003" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue." alt="" coords="99,56,215,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="52,46,85,52,83,58,51,51"/>
 </map>

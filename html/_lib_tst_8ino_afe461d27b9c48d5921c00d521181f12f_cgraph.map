@@ -1,9 +1,17 @@
 <map id="loop" name="loop">
-<area shape="rect" id="node2" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue. " alt="" coords="149,5,276,32"/>
-<area shape="rect" id="node3" href="$classcpp_queue.html#aab6135bad94a6b1733df34d1ae79c838" title="get number of records in the queue " alt="" coords="135,56,290,83"/>
-<area shape="rect" id="node4" href="$classcpp_queue.html#a18e4ca1ed2f00e1db33dd87219e913f4" title="get number of records left in the queue " alt="" coords="103,107,323,133"/>
-<area shape="rect" id="node5" href="$classcpp_queue.html#a44fda4cd5b7b2a743d93f7b9095ee1ee" title="get fullness state of the queue " alt="" coords="150,157,275,184"/>
-<area shape="rect" id="node6" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue. " alt="" coords="153,208,272,235"/>
-<area shape="rect" id="node7" href="$classcpp_queue.html#ae98c3e922e2dd62c973dae1c0c964f10" title="Peek record from queue. " alt="" coords="149,259,276,285"/>
-<area shape="rect" id="node8" href="$classcpp_queue.html#af5e021e0853140b344ecbfe359a57eab" title="get emptiness state of the queue " alt="" coords="139,309,286,336"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,51,184"/>
+<area shape="rect" id="Node000002" href="$classcpp_queue.html#ac6421f7f59535b9150eead64c1f29390" title="get number of records in the queue" alt="" coords="130,5,271,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="30,156,52,100,71,69,97,42,114,31,117,36,100,46,75,72,57,103,35,158"/>
+<area shape="rect" id="Node000003" href="$classcpp_queue.html#aa9750d8c3bf372080d173a5adf42ba4c" title="get number of records left in the queue" alt="" coords="99,56,302,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="36,156,61,124,97,92,109,86,112,91,100,97,65,127,40,159"/>
+<area shape="rect" id="Node000004" href="$classcpp_queue.html#a6bffad58bc55588be33e3ef7bb7fb52e" title="get emptiness state of the queue" alt="" coords="132,107,269,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="50,160,98,143,125,135,126,140,99,148,52,165"/>
+<area shape="rect" id="Node000005" href="$classcpp_queue.html#a9ba9a41c2cfcae4b27fcf50cedc50127" title="get fullness state of the queue" alt="" coords="141,157,260,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="51,168,126,168,126,173,51,173"/>
+<area shape="rect" id="Node000006" href="$classcpp_queue.html#ae98c3e922e2dd62c973dae1c0c964f10" title="Peek record from queue." alt="" coords="142,208,259,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="52,177,99,193,129,202,127,207,98,199,50,182"/>
+<area shape="rect" id="Node000007" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue." alt="" coords="146,259,255,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="40,183,65,214,100,244,132,258,130,263,97,249,61,218,36,186"/>
+<area shape="rect" id="Node000008" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue." alt="" coords="142,309,259,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="35,184,57,238,75,269,100,295,129,310,127,315,97,299,71,273,52,241,30,185"/>
 </map>

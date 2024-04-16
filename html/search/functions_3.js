@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getcount',['getCount',['../classcpp_queue.html#aab6135bad94a6b1733df34d1ae79c838',1,'cppQueue']]],
-  ['getremainingcount',['getRemainingCount',['../classcpp_queue.html#a18e4ca1ed2f00e1db33dd87219e913f4',1,'cppQueue']]]
+  ['getcount_0',['getCount',['../classcpp_queue.html#ac6421f7f59535b9150eead64c1f29390',1,'cppQueue']]],
+  ['getremainingcount_1',['getRemainingCount',['../classcpp_queue.html#aa9750d8c3bf372080d173a5adf42ba4c',1,'cppQueue']]]
 ];

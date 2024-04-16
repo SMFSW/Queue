@@ -1,3 +1,13 @@
 <map id="src/cppQueue.cpp" name="src/cppQueue.cpp">
-<area shape="rect" id="node4" href="$cpp_queue_8h.html" title="cppQueue handling library (designed on Arduino) " alt="" coords="193,80,291,107"/>
+<area shape="rect" id="Node000001" title="cppQueue handling library (designed on Arduino)" alt="" coords="62,5,189,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,35,66,72,62,68,108,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,80,157,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,33,128,65,123,65,123,33"/>
+<area shape="rect" id="Node000004" href="$cpp_queue_8h.html" title="cppQueue handling library (designed on Arduino)" alt="" coords="181,80,273,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,30,199,69,196,73,142,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="138,155,217,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="220,109,196,144,192,141,216,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="241,155,309,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="237,106,261,141,256,144,233,109"/>
 </map>

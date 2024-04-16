@@ -1,9 +1,0 @@
-<map id="loop" name="loop">
-<area shape="rect" id="node2" href="$classcpp_queue.html#ada7848b156357297af8e6704de001b82" title="Push record to queue. " alt="" coords="149,5,276,32"/>
-<area shape="rect" id="node3" href="$classcpp_queue.html#aab6135bad94a6b1733df34d1ae79c838" title="get number of records in the queue " alt="" coords="135,56,290,83"/>
-<area shape="rect" id="node4" href="$classcpp_queue.html#a18e4ca1ed2f00e1db33dd87219e913f4" title="get number of records left in the queue " alt="" coords="103,107,323,133"/>
-<area shape="rect" id="node5" href="$classcpp_queue.html#a44fda4cd5b7b2a743d93f7b9095ee1ee" title="get fullness state of the queue " alt="" coords="150,157,275,184"/>
-<area shape="rect" id="node6" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue. " alt="" coords="153,208,272,235"/>
-<area shape="rect" id="node7" href="$classcpp_queue.html#ae98c3e922e2dd62c973dae1c0c964f10" title="Peek record from queue. " alt="" coords="149,259,276,285"/>
-<area shape="rect" id="node8" href="$classcpp_queue.html#af5e021e0853140b344ecbfe359a57eab" title="get emptiness state of the queue " alt="" coords="139,309,286,336"/>
-</map>

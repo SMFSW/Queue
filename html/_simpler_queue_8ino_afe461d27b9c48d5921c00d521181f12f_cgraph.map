@@ -1,0 +1,7 @@
+<map id="loop" name="loop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,51,57"/>
+<area shape="rect" id="Node000002" href="$classcpp_queue.html#a6bffad58bc55588be33e3ef7bb7fb52e" title="get emptiness state of the queue" alt="" coords="99,5,235,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,37,84,31,85,36,52,43"/>
+<area shape="rect" id="Node000003" href="$classcpp_queue.html#a536cc635bfd46f5b97b24b26573341ac" title="Pop record from queue." alt="" coords="112,56,222,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="52,45,98,54,97,59,51,51"/>
+</map>

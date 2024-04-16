@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['rollovertest_2eino',['RolloverTest.ino',['../_rollover_test_8ino.html',1,'']]],
-  ['rollovertest_2eino_2ecpp',['RolloverTest.ino.cpp',['../esp32_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../esp8266_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../leonardo_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../m4_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../mega2560_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../uno_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)'],['../zero_2_rollover_test_2sketch_2_rollover_test_8ino_8cpp.html',1,'(Global Namespace)']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['releasenotes_2emd_1',['ReleaseNotes.md',['../_release_notes_8md.html',1,'']]],
+  ['rollovertest_2eino_2',['RolloverTest.ino',['../_rollover_test_8ino.html',1,'']]]
 ];

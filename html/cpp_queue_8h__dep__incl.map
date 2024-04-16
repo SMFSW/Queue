@@ -1,0 +1,23 @@
+<map id="src/cppQueue.h" name="src/cppQueue.h">
+<area shape="rect" id="Node000001" title="cppQueue handling library (designed on Arduino)" alt="" coords="920,5,1033,32"/>
+<area shape="rect" id="Node000002" href="$_lib_tst_8ino.html" title=" " alt="" coords="5,88,182,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="905,25,595,43,395,59,194,83,151,90,150,85,193,77,395,54,595,37,904,20"/>
+<area shape="rect" id="Node000003" href="$_pointers_queue_8ino.html" title=" " alt="" coords="206,80,373,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="905,28,673,47,530,63,386,83,374,85,373,79,385,77,529,58,673,42,904,22"/>
+<area shape="rect" id="Node000004" href="$_queue_duplicates_8ino.html" title=" " alt="" coords="398,80,579,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="905,33,591,83,580,85,579,79,590,77,905,28"/>
+<area shape="rect" id="Node000005" href="$_queue_idx_peeking_8ino.html" title=" " alt="" coords="603,80,787,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="919,39,768,82,767,77,918,34"/>
+<area shape="rect" id="Node000006" href="$_rollover_test_8ino.html" title=" " alt="" coords="811,80,965,123"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="953,44,913,81,909,78,950,40"/>
+<area shape="rect" id="Node000007" href="$_serial_queue_8ino.html" title=" " alt="" coords="989,80,1142,123"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1002,40,1044,78,1041,81,999,44"/>
+<area shape="rect" id="Node000008" href="$_simple_queue_8ino.html" title=" " alt="" coords="1166,80,1325,123"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1033,34,1177,77,1175,82,1031,39"/>
+<area shape="rect" id="Node000009" href="$_simple_queue_static_8ino.html" title=" " alt="" coords="1349,80,1542,123"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1048,29,1338,77,1349,79,1348,85,1337,83,1047,34"/>
+<area shape="rect" id="Node000010" href="$_simpler_queue_8ino.html" title=" " alt="" coords="1567,80,1730,123"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1048,22,1274,42,1415,58,1555,77,1567,79,1566,85,1554,83,1414,63,1274,47,1047,28"/>
+<area shape="rect" id="Node000011" href="$cpp_queue_8cpp.html" title="cppQueue handling library (designed on Arduino)" alt="" coords="1754,88,1881,115"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1048,19,1178,23,1351,33,1546,51,1742,77,1776,85,1775,90,1741,83,1545,56,1351,39,1178,29,1048,24"/>
+</map>
