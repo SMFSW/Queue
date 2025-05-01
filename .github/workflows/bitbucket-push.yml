@@ -1,0 +1,22 @@
+name: Mirror Github repository to BitBucket
+
+on: [push]
+
+jobs:
+
+  update_bitbucket_mirror:
+    name: update_bitbucket_mirror
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # <-- clone with complete history
+      - name: Push
+        uses: heussd/mirror-to-bitbucket-github-action@v2
+        with:
+          username: SMFSW
+          repository: queue
+          password: ${{ secrets.BITBUCKET_PASSWORD }}
