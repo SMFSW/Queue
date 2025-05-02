@@ -1,4 +1,4 @@
-# Queue
+# Queue [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/queue/badge)](https://www.codefactor.io/repository/github/smfsw/queue)
 
 Queue handling library (designed on Arduino)
 
