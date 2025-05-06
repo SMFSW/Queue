@@ -1,6 +1,6 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2024, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2025, SMFSW
 ** \brief cppQueue handling library (designed on Arduino)
 ** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets

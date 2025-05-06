@@ -1,5 +1,5 @@
 Queue handling library (designed on Arduino)
-2017-2024 SMFSW
+2017-2025 SMFSW
 
 Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
 	- issues encountered
