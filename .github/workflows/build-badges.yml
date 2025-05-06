@@ -1,0 +1,31 @@
+name: Build custom repository badges
+
+on: [push]
+
+jobs:
+
+  create_badges:
+    name: create_gist_badges
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create repository custom badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: a9a2b2a02fda1b33461d53ddfe69d649
+          filename: Queue_custom_repo_badge.json
+          label: ${{ vars.REPO_BADGE_CUSTOM_LABEL }}
+          labelColor: ${{ vars.REPO_BADGE_CUSTOM_LABEL_COLOR }}
+          message: ${{ vars.REPO_BADGE_CUSTOM_MESSAGE }}
+          color: ${{ vars.REPO_BADGE_CUSTOM_MESSAGE_COLOR }}
+      - name: Create repository activity badge
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: a9a2b2a02fda1b33461d53ddfe69d649
+          filename: Queue_status_badge.json
+          label: "Status"
+          message: ${{ vars.REPO_STATUS }}
+          color: ${{ vars.REPO_STATUS_COLOR }}

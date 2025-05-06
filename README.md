@@ -1,4 +1,16 @@
-# Queue [![CodeFactor](https://www.codefactor.io/repository/github/smfsw/queue/badge)](https://www.codefactor.io/repository/github/smfsw/queue)
+# Queue
+
+[![author](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/auth_SMFSW.json)](https://github.com/SMFSW)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/Queue_status_badge.json)
+[![license](https://img.shields.io/badge/License-BSD3-darkred.svg)](LICENSE)
+[![CodeFactor](https://www.codefactor.io/repository/github/smfsw/queue/badge)](https://www.codefactor.io/repository/github/smfsw/queue)
+
+![platform](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/ANY_platform.json)
+
+[![doxy](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_DOXY.json)](https://smfsw.github.io/Queue)
+[![re_note](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/tool_RN.json)](ReleaseNotes.md)
+
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/SMFSW/a9a2b2a02fda1b33461d53ddfe69d649/raw/Queue_custom_repo_badge.json)
 
 Queue handling library (designed on Arduino)
 
@@ -63,16 +75,6 @@ In this particular case, dropping decision must be made before re-enabling inter
 - [QueueIdxPeeking.ino](examples/QueueIdxPeeking/QueueIdxPeeking.ino): Simple test to test queue index picking
 - [RolloverTest.ino](examples/RolloverTest/RolloverTest.ino): Simple test to test queue rollover (for lib testing purposes mainly)
 - [LibTst.ino](examples/LibTst/LibTst.ino): flexible test (for lib testing purposes mainly)
-
-## Documentation
-
-Doxygen doc can be generated using "Doxyfile".
-
-See [generated documentation](https://smfsw.github.io/Queue/)
-
-## Release Notes
-
-See [release notes](ReleaseNotes.md)
 
 ## See also
 
