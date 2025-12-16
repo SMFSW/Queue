@@ -1,0 +1,19 @@
+name: cppcheck
+
+on: [push]
+
+jobs:
+  cppcheck:
+    runs-on: docker
+    container:
+      image: node:20-alpine
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cppcheck
+        run: |
+          apk add --no-cache cppcheck
+
+      - name: Run cppcheck
+        run: |
+          ./.cppcheck/cppcheck.sh
