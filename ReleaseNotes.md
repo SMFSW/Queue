@@ -1,31 +1,40 @@
-Queue handling library (designed on Arduino)
+# Queue handling library (designed on Arduino)
+
 2017-2026 SMFSW
 
-Feel free to share your thoughts @ xgarmanboziax@gmail.com about:
-	- issues encountered
-	- optimizations
-	- improvements & new functionalities
+Feel free to share your thoughts @ <xgarmanboziax@gmail.com> about:
+
+- issues encountered
+- optimizations
+- improvements & new functionalities
 
 ------------
 
 ** Actual:
 
-v2.1:	02 Jan 2026:
+v2.1: (02 Jan 2026):
+
 - Internal functions name refactoring
 - Unused tags removal
 - always_inline attribute removal for index manipulation functions
 - c-cast updated to cpp static_cast
 - Legacy standard library headers replaced by their cpp equivalents
 - const qualifiers for getter functions
+- Explicit memset/memcpy ignored return value
+- One statement per line refactoring
+- MD files formatting
 
-v2.0:	15 Apr 2024:
+v2.0: (15 Apr 2024):
+
 - No more inlines in header file (to generate proper static library)
 - MISRA refactoring
 
-v1.11:	18 Dec 2022:
+v1.11: (18 Dec 2022):
+
 - Include missing stddef.h
 
-v1.10:	15 Nov 2022:
+v1.10: (15 Nov 2022):
+
 - SimpleQueueStatic.ino example added
 - Constructor parameters added to setup a queue from statically allocated data area
 - Constructor refactoring for consistency and robustness (when using queue functions regardless init performed with success)
@@ -33,24 +42,29 @@ v1.10:	15 Nov 2022:
 - Outdated travisCI status in README.md removed
 - LICENSE years update
 
-v1.9.1:	14 Jan 2021:
+v1.9.1: (14 Jan 2021):
+
 - SerialQueue.ino example added
 
-v1.9:	4 Nov 2020:
+v1.9: (4 Nov 2020):
+
 - Queue class renamed to cppQueue
 
-v1.8:	4 Nov 2019:
+v1.8: (4 Nov 2019):
+
 - const qualifiers added where missing
 - Added peekIdx and peekPrevious methods
 - Added related examples
 
-v1.7:	2 Jun 2019:
-- Fixed README.md thanks to @reydelleon
+v1.7: (2 Jun 2019):
+
+- Fixed README.md thanks to [\@reydelleon](https://github.com/reydelleon)
 - INC_IDX & DEC_IDX macros changed to inlines
 - Added nonnull function attribute where needed
 - Updated Doxyfile
 
-v1.6	26 May 2018:
+v1.6 (26 May 2018):
+
 - Constructor does not check anymore if class instance is already allocated (as it supposedly isn't)
 - Added getRemainingCount inline returning how much records are left in the queue
 - Added sizeOf inline to check full queue size in byte (may also be used to check if queue has been allocated properly)
@@ -60,28 +74,34 @@ v1.6	26 May 2018:
 - Updated README.md
 - Added more example sketches & updated LibTst example using latest inlines additions
 
-v1.5	14 March 2018:
+v1.5 (14 March 2018):
+
 - Added isInitialized inline to be able to check after init if queue has been properly allocated
 - Added flush inline (to have the same functions as in cQueue library)
 - LIFO peek temporary variable is uint16_t (same type as in variable)
 - Comments fixes
 
-v1.4	21 November 2017:
+v1.4 (21 November 2017):
+
 - Added const qualifier for function parameters
 
-v1.3	12 July 2017:
+v1.3 (12 July 2017):
+
 - #2 fix for esp8266: renamed cpp/h files : header name already used in compiler sys includes
 - examples updated with new header file name (cppQueue.h)
 - comply with Arduino v1.5+ IDE source located in src subfolder
 
-v1.2	07 July 2017:
+v1.2 (07 July 2017):
+
 - #1 added pull inline for compatibility with older versions (v1.0)
 - #2 surrounded c libs with extern C
 
-v1.1	06 July 2017:
+v1.1 (06 July 2017):
+
 - pop keyword used (instead of pull)
 - peek & drop functions added
 - examples updated to reflect latest changes
 
-v1.0	22 March 2017:
+v1.0 (22 March 2017):
+
 - First release

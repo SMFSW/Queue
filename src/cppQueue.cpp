@@ -27,8 +27,14 @@
 **/
 static inline void __attribute__((nonnull)) cppq_inc_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
-	if (*pIdx < (end - 1U))	{ (*pIdx)++; }
-	else					{ *pIdx = start; }
+	if (*pIdx < (end - 1U))
+	{
+		(*pIdx)++;
+	}
+	else
+	{
+		*pIdx = start;
+	}
 }
 
 /*!	\brief Decrement index
@@ -39,8 +45,14 @@ static inline void __attribute__((nonnull)) cppq_inc_idx(uint16_t * const pIdx, 
 **/
 static inline void __attribute__((nonnull)) cppq_dec_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
-	if (*pIdx > start)		{ (*pIdx)--; }
-	else					{ *pIdx = end - 1U; }
+	if (*pIdx > start)
+	{
+		(*pIdx)--;
+	}
+	else
+	{
+		*pIdx = end - 1U;
+	}
 }
 
 
@@ -81,18 +93,26 @@ inline uint16_t __attribute__((always_inline)) cppQueue::_getCount(void) const {
 /************************/
 cppQueue::cppQueue(const size_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite, void * const pQDat, const size_t lenQDat)
 {
+	flush();					// variables needs to be 0 to ensure proper functions behavior when queue is not allocated
 	init = 0;
-	rec_nb = 0;		// rec_nb needs to be 0 to ensure proper push behavior when queue is not allocated
-	ovw = false;	// ovw needs to be false to ensure proper push behavior when queue is not allocated
-	flush();		// other variables needs to be 0 to ensure proper functions behavior when queue is not allocated
+	rec_nb = 0;					// rec_nb needs to be 0 to ensure proper push behavior when queue is not allocated
+	ovw = false;				// ovw needs to be false to ensure proper push behavior when queue is not allocated
+	dynamic = (pQDat == NULL);
 
 	const size_t size = nb_recs * size_rec;
 
-	dynamic = (pQDat == NULL);
-
-	if (dynamic)				{ queue = static_cast<uint8_t *>(malloc(size)); }
-	else if (lenQDat >= size)	{ queue = static_cast<uint8_t *>(pQDat); }
-	else						{ queue = NULL; }
+	if (dynamic)
+	{
+		queue = static_cast<uint8_t *>(malloc(size));
+	}
+	else if (lenQDat >= size)
+	{
+		queue = static_cast<uint8_t *>(pQDat);
+	}
+	else
+	{
+		queue = NULL;
+	}
 
 	if (queue != NULL)
 	{
@@ -108,7 +128,10 @@ cppQueue::cppQueue(const size_t size_rec, const uint16_t nb_recs, const cppQueue
 
 cppQueue::~cppQueue()
 {
-	if (_isInitialized() && dynamic && (queue != NULL))	{ free(queue); }
+	if (_isInitialized() && dynamic && (queue != NULL))
+	{
+		free(queue);
+	}
 }
 
 
@@ -147,7 +170,7 @@ bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 	if (ret)
 	{
 		uint8_t * const pStart = queue + (rec_sz * in);
-		memcpy(pStart, record, rec_sz);
+		(void) memcpy(pStart, record, rec_sz);
 		cppq_inc_idx(&in, rec_nb, 0);
 	}
 
@@ -177,7 +200,7 @@ bool __attribute__((nonnull)) cppQueue::pop(void * const record)
 			pStart = queue + (rec_sz * in);
 		}
 
-		memcpy(record, pStart, rec_sz);
+		(void) memcpy(record, pStart, rec_sz);
 		cnt--;	// Decrease records count
 	}
 
@@ -209,7 +232,7 @@ bool __attribute__((nonnull)) cppQueue::peek(void * const record)
 			pStart = queue + (rec_sz * rec);
 		}
 
-		memcpy(record, pStart, rec_sz);
+		(void) memcpy(record, pStart, rec_sz);
 	}
 
 	return ret;
@@ -263,7 +286,7 @@ bool __attribute__((nonnull)) cppQueue::peekIdx(void * const record, const uint1
 			pStart = queue + (rec_sz * idx);
 		}
 
-		memcpy(record, pStart, rec_sz);
+		(void) memcpy(record, pStart, rec_sz);
 	}
 
 	return ret;
