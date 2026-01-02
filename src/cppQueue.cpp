@@ -1,13 +1,13 @@
 /*!\file cppQueue.cpp
 ** \author SMFSW
-** \copyright BSD 3-Clause License (c) 2017-2025, SMFSW
+** \copyright BSD 3-Clause License (c) 2017-2026, SMFSW
 ** \brief cppQueue handling library (designed on Arduino)
 ** \details cppQueue handling library (designed on Arduino)
 **			This library was designed for Arduino, yet may be compiled without change with gcc for other purposes/targets
 **/
 /****************************************************************/
-#include <string.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 
 #include "cppQueue.h"
 /****************************************************************/
@@ -25,7 +25,7 @@
 **	\param [in] end - counter upper limit value
 **	\param [in] start - counter lower limit value
 **/
-static inline void __attribute__((nonnull, always_inline)) _inc_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
+static inline void __attribute__((nonnull)) cppq_inc_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
 	if (*pIdx < (end - 1U))	{ (*pIdx)++; }
 	else					{ *pIdx = start; }
@@ -37,7 +37,7 @@ static inline void __attribute__((nonnull, always_inline)) _inc_idx(uint16_t * c
 **	\param [in] end - counter upper limit value
 **	\param [in] start - counter lower limit value
 **/
-static inline void __attribute__((nonnull, always_inline)) _dec_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
+static inline void __attribute__((nonnull)) cppq_dec_idx(uint16_t * const pIdx, const uint16_t end, const uint16_t start)
 {
 	if (*pIdx > start)		{ (*pIdx)--; }
 	else					{ *pIdx = end - 1U; }
@@ -49,30 +49,30 @@ static inline void __attribute__((nonnull, always_inline)) _dec_idx(uint16_t * c
 **	\retval true if queue is allocated
 **	\retval false is queue is not allocated
 **/
-inline bool __attribute__((always_inline)) cppQueue::_isInitialized(void) {
-	return (init == QUEUE_INITIALIZED) ? true : false; }
+inline bool __attribute__((always_inline)) cppQueue::_isInitialized(void) const {
+	return (init == QUEUE_INITIALIZED); }
 
 /*!	\brief get emptiness state of the queue
 **	\return cppQueue emptiness status
 **	\retval true if queue is empty
 **	\retval false is not empty
 **/
-inline bool __attribute__((always_inline)) cppQueue::_isEmpty(void) {
-	return (cnt == 0U) ? true : false; }
+inline bool __attribute__((always_inline)) cppQueue::_isEmpty(void) const {
+	return (cnt == 0U); }
 
 /*!	\brief get fullness state of the queue
 **	\return cppQueue fullness status
 **	\retval true if queue is full
 **	\retval false is not full
 **/
-inline bool __attribute__((always_inline)) cppQueue::_isFull(void) {
-	return (cnt == rec_nb) ? true : false; }
+inline bool __attribute__((always_inline)) cppQueue::_isFull(void) const {
+	return (cnt == rec_nb); }
 
 
 /*!	\brief get number of records in the queue
 **	\return Number of records stored in the queue
 **/
-inline uint16_t __attribute__((always_inline)) cppQueue::_getCount(void) {
+inline uint16_t __attribute__((always_inline)) cppQueue::_getCount(void) const {
 	return cnt; }
 
 
@@ -82,16 +82,16 @@ inline uint16_t __attribute__((always_inline)) cppQueue::_getCount(void) {
 cppQueue::cppQueue(const size_t size_rec, const uint16_t nb_recs, const cppQueueType type, const bool overwrite, void * const pQDat, const size_t lenQDat)
 {
 	init = 0;
-	rec_nb = 0;	// rec_nb needs to be 0 to ensure proper push behavior when queue is not allocated
-	ovw = 0;	// ovw needs to be 0 to ensure proper push behavior when queue is not allocated
-	flush();	// other variables needs to be 0 to ensure proper functions behavior when queue is not allocated
+	rec_nb = 0;		// rec_nb needs to be 0 to ensure proper push behavior when queue is not allocated
+	ovw = false;	// ovw needs to be false to ensure proper push behavior when queue is not allocated
+	flush();		// other variables needs to be 0 to ensure proper functions behavior when queue is not allocated
 
 	const size_t size = nb_recs * size_rec;
 
-	dynamic = (pQDat == NULL) ? true : false;
+	dynamic = (pQDat == NULL);
 
-	if (dynamic)				{ queue = (uint8_t *) malloc(size); }
-	else if (lenQDat >= size)	{ queue = (uint8_t *) pQDat; }
+	if (dynamic)				{ queue = static_cast<uint8_t *>(malloc(size)); }
+	else if (lenQDat >= size)	{ queue = static_cast<uint8_t *>(pQDat); }
 	else						{ queue = NULL; }
 
 	if (queue != NULL)
@@ -130,7 +130,7 @@ bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 		{
 			if (impl == FIFO)
 			{
-				_inc_idx(&out, rec_nb, 0);	// as oldest record is overwritten, increment out
+				cppq_inc_idx(&out, rec_nb, 0);	// as oldest record is overwritten, increment out
 			}
 			//else if (impl == LIFO)	{}	// Nothing to do in this case
 		}
@@ -148,7 +148,7 @@ bool __attribute__((nonnull)) cppQueue::push(const void * const record)
 	{
 		uint8_t * const pStart = queue + (rec_sz * in);
 		memcpy(pStart, record, rec_sz);
-		_inc_idx(&in, rec_nb, 0);
+		cppq_inc_idx(&in, rec_nb, 0);
 	}
 
 	return ret;
@@ -169,11 +169,11 @@ bool __attribute__((nonnull)) cppQueue::pop(void * const record)
 		if (impl == FIFO)
 		{
 			pStart = queue + (rec_sz * out);
-			_inc_idx(&out, rec_nb, 0);
+			cppq_inc_idx(&out, rec_nb, 0);
 		}
 		else /* if (impl == LIFO) */
 		{
-			_dec_idx(&in, rec_nb, 0);
+			cppq_dec_idx(&in, rec_nb, 0);
 			pStart = queue + (rec_sz * in);
 		}
 
@@ -205,7 +205,7 @@ bool __attribute__((nonnull)) cppQueue::peek(void * const record)
 		else /*if (impl == LIFO)*/
 		{
 			uint16_t rec = in;	// Temporary var for peek (no change on in with dec_idx)
-			_dec_idx(&rec, rec_nb, 0);
+			cppq_dec_idx(&rec, rec_nb, 0);
 			pStart = queue + (rec_sz * rec);
 		}
 
@@ -228,11 +228,11 @@ bool cppQueue::drop(void)
 	{
 		if (impl == FIFO)
 		{
-			_inc_idx(&out, rec_nb, 0);
+			cppq_inc_idx(&out, rec_nb, 0);
 		}
 		else /*if (impl == LIFO)*/
 		{
-			_dec_idx(&in, rec_nb, 0);
+			cppq_dec_idx(&in, rec_nb, 0);
 		}
 
 		cnt--;	// Decrease records count
@@ -280,21 +280,21 @@ bool __attribute__((nonnull)) cppQueue::peekPrevious(void * const record)
 /**********************/
 /*** PUBLIC GETTERS ***/
 /**********************/
-bool cppQueue::isInitialized(void) {
+bool cppQueue::isInitialized(void) const {
 	return _isInitialized(); }
 
-bool cppQueue::isEmpty(void) {
+bool cppQueue::isEmpty(void) const {
 	return _isEmpty(); }
 
-bool cppQueue::isFull(void) {
+bool cppQueue::isFull(void) const {
 	return _isFull(); }
 
-uint32_t cppQueue::sizeOf(void) {
+uint32_t cppQueue::sizeOf(void) const {
 	return queue_sz; }
 
-uint16_t cppQueue::getCount(void) {
+uint16_t cppQueue::getCount(void) const {
 	return _getCount(); }
 
-uint16_t cppQueue::getRemainingCount(void) {
+uint16_t cppQueue::getRemainingCount(void) const {
 	return rec_nb - cnt; }
 
